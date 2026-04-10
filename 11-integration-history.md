@@ -1,8 +1,8 @@
----
-[<<-- Previous: Strickland — Parallel Concepts and Async Validation](10-strickland.md) | [Table of Contents](README.md) | [Next: The Async Validation Prototype -->>](12-async-validation-demo.md)
----
-
 # Chapter 11: The History of DataAnnotations Integration Across .NET
+
+---
+[← Previous: Strickland — Parallel Concepts and Async Validation](10-strickland.md) | [Table of Contents](README.md) | [Next: The Async Validation Prototype →](12-async-validation-demo.md)
+---
 
 > **Key Concept:** DataAnnotations has been integrated into 11 distinct application models across the .NET product suite since 2016 — every single one is synchronous at the DataAnnotations level.
 
@@ -282,5 +282,5 @@ Aspire is listed here because it is a significant and growing consumer of the op
 - **11 integration points means 11 places to evaluate.** Not all need changes in the same release, but every one must be accounted for in the async validation design to avoid leaving sync-only gaps that block adoption.
 
 ---
-[<<-- Previous: Strickland — Parallel Concepts and Async Validation](10-strickland.md) | [Table of Contents](README.md) | [Next: The Async Validation Prototype -->>](12-async-validation-demo.md)
+[← Previous: Strickland — Parallel Concepts and Async Validation](10-strickland.md) | [Table of Contents](README.md) | [Next: The Async Validation Prototype →](12-async-validation-demo.md)
 ---

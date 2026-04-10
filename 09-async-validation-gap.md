@@ -1,7 +1,7 @@
 # Chapter 9: The Async Validation Gap
 
 ---
-[<<-- Previous: The ValidationResult API](08-validation-result-api.md) | [Table of Contents](README.md) | [Next: Strickland — Parallel Concepts and Async Validation -->>](10-strickland.md)
+[← Previous: The ValidationResult API](08-validation-result-api.md) | [Table of Contents](README.md) | [Next: Strickland — Parallel Concepts and Async Validation →](10-strickland.md)
 ---
 
 > **Key Concept:** The entire DataAnnotations validation system is synchronous. There is no async path anywhere in the current API.
@@ -95,5 +95,5 @@ See [Chapter 11](11-integration-history.md) for the full chronological history o
 > **Prototype available:** A working async validation demo already exists — see [Chapter 12](12-async-validation-demo.md) for a detailed analysis of the `AsyncValidationAttribute`, `IAsyncValidatableObject`, and the two-phase validation strategy implemented in the [`oroztocil/validation-demo`](https://github.com/dotnet/aspnetcore/tree/oroztocil/validation-demo) branch.
 
 ---
-[<<-- Previous: The ValidationResult API](08-validation-result-api.md) | [Table of Contents](README.md) | [Next: Strickland — Parallel Concepts and Async Validation -->>](10-strickland.md)
+[← Previous: The ValidationResult API](08-validation-result-api.md) | [Table of Contents](README.md) | [Next: Strickland — Parallel Concepts and Async Validation →](10-strickland.md)
 ---

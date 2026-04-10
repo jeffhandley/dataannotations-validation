@@ -1,7 +1,7 @@
 # Appendix B: Complete Reference Link Library
 
 ---
-[<<-- Previous: .NET Integration Points Catalog](appendix-a-integration-points.md) | [Table of Contents](README.md)
+[← Previous: .NET Integration Points Catalog](appendix-a-integration-points.md) | [Table of Contents](README.md)
 ---
 
 ## .NET API Documentation
@@ -122,5 +122,5 @@
 - [Options.DataAnnotations design issue (dotnet/aspnetcore#3385)](https://github.com/dotnet/aspnetcore/issues/3385)
 
 ---
-[<<-- Previous: .NET Integration Points Catalog](appendix-a-integration-points.md) | [Table of Contents](README.md)
+[← Previous: .NET Integration Points Catalog](appendix-a-integration-points.md) | [Table of Contents](README.md)
 ---

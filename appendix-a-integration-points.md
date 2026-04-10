@@ -1,7 +1,7 @@
 # Appendix A: .NET Integration Points Catalog
 
 ---
-[<<-- Previous: The Async Validation Prototype — A Working Demo](12-async-validation-demo.md) | [Table of Contents](README.md) | [Next: Appendix B: Complete Reference Link Library -->>](appendix-b-references.md)
+[← Previous: The Async Validation Prototype — A Working Demo](12-async-validation-demo.md) | [Table of Contents](README.md) | [Next: Appendix B: Complete Reference Link Library →](appendix-b-references.md)
 ---
 
 Every location across the .NET product suite where DataAnnotations validation is invoked or respected. **Each is a location that must be updated to support async validation.**
@@ -142,5 +142,5 @@ graph TB
 11. **Any future Minimal API validation** — If built-in validation is added
 
 ---
-[<<-- Previous: The Async Validation Prototype — A Working Demo](12-async-validation-demo.md) | [Table of Contents](README.md) | [Next: Appendix B: Complete Reference Link Library -->>](appendix-b-references.md)
+[← Previous: The Async Validation Prototype — A Working Demo](12-async-validation-demo.md) | [Table of Contents](README.md) | [Next: Appendix B: Complete Reference Link Library →](appendix-b-references.md)
 ---

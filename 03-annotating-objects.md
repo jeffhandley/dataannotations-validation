@@ -1,7 +1,7 @@
 # Chapter 3: Annotating Objects for Validation
 
 ---
-[<<-- Previous: Creating Custom Validation Attributes](02-creating-custom-attributes.md) | [Table of Contents](README.md) | [Next: Programmatic Validation -->>](04-programmatic-validation.md)
+[← Previous: Creating Custom Validation Attributes](02-creating-custom-attributes.md) | [Table of Contents](README.md) | [Next: Programmatic Validation →](04-programmatic-validation.md)
 ---
 
 > **Key Reference**
@@ -104,5 +104,5 @@ public class UserProfile
 When `Validator.TryValidateObject` runs with `validateAllProperties: true`, it evaluates `[Required]` first for each property, then proceeds to the remaining attributes. If `[Required]` fails, the other attributes on that property are skipped. This prevents confusing cascading errors — there's no point reporting that a string doesn't match a regex if the string was never provided in the first place.
 
 ---
-[<<-- Previous: Creating Custom Validation Attributes](02-creating-custom-attributes.md) | [Table of Contents](README.md) | [Next: Programmatic Validation -->>](04-programmatic-validation.md)
+[← Previous: Creating Custom Validation Attributes](02-creating-custom-attributes.md) | [Table of Contents](README.md) | [Next: Programmatic Validation →](04-programmatic-validation.md)
 ---

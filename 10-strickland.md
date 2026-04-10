@@ -1,7 +1,7 @@
 # Chapter 10: Strickland — Parallel Concepts and Async Validation
 
 ---
-[<<-- Previous: The Async Validation Gap](09-async-validation-gap.md) | [Table of Contents](README.md) | [Next: The History of DataAnnotations Integration Across .NET -->>](11-integration-history.md)
+[← Previous: The Async Validation Gap](09-async-validation-gap.md) | [Table of Contents](README.md) | [Next: The History of DataAnnotations Integration Across .NET →](11-integration-history.md)
 ---
 
 **Key References:**
@@ -158,5 +158,5 @@ The outer function is a "deferred" validator — it doesn't execute until explic
 Reference: [Strickland: Deferred Async Validation](https://github.com/jeffhandley/strickland/blob/master/docs/async-validation/deferred-async-validation.md)
 
 ---
-[<<-- Previous: The Async Validation Gap](09-async-validation-gap.md) | [Table of Contents](README.md) | [Next: The History of DataAnnotations Integration Across .NET -->>](11-integration-history.md)
+[← Previous: The Async Validation Gap](09-async-validation-gap.md) | [Table of Contents](README.md) | [Next: The History of DataAnnotations Integration Across .NET →](11-integration-history.md)
 ---

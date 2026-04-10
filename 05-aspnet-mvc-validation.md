@@ -1,7 +1,7 @@
 # Chapter 5: ASP.NET MVC Automatic Validation
 
 ---
-[<<-- Previous: Programmatic Validation](04-programmatic-validation.md) | [Table of Contents](README.md) | [Next: Advanced Custom Validation -->>](06-advanced-custom-validation.md)
+[← Previous: Programmatic Validation](04-programmatic-validation.md) | [Table of Contents](README.md) | [Next: Advanced Custom Validation →](06-advanced-custom-validation.md)
 ---
 
 ASP.NET MVC (and ASP.NET Core) integrates DataAnnotations validation directly into the model-binding pipeline, so validation happens automatically before your action code runs.
@@ -102,5 +102,5 @@ This is **highly relevant** to the async validation project — it represents a 
 - [Microsoft.Extensions.Validation NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Validation)
 
 ---
-[<<-- Previous: Programmatic Validation](04-programmatic-validation.md) | [Table of Contents](README.md) | [Next: Advanced Custom Validation -->>](06-advanced-custom-validation.md)
+[← Previous: Programmatic Validation](04-programmatic-validation.md) | [Table of Contents](README.md) | [Next: Advanced Custom Validation →](06-advanced-custom-validation.md)
 ---

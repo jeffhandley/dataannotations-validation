@@ -1,7 +1,7 @@
 # Chapter 8: The ValidationResult API
 
 ---
-[<<-- Previous: ValidationContext Deep Dive](07-validation-context.md) | [Table of Contents](README.md) | [Next: The Async Validation Gap -->>](09-async-validation-gap.md)
+[← Previous: ValidationContext Deep Dive](07-validation-context.md) | [Table of Contents](README.md) | [Next: The Async Validation Gap →](09-async-validation-gap.md)
 ---
 
 `ValidationResult` is the currency of the DataAnnotations validation system — every validation operation ultimately produces either a `null` (success) or a `ValidationResult` instance (failure). Understanding its design, especially the `Success` sentinel, is essential for writing correct validators.
@@ -111,5 +111,5 @@ Understanding how `ValidationResult` flows through the validation pipeline clari
 The key insight: `GetValidationResult` is responsible for calling `FormatErrorMessage`, which handles the `{0}` placeholders in error message templates. Custom validators that override `IsValid` don't need to call `FormatErrorMessage` themselves if they set `ErrorMessage` on the attribute — the pipeline handles it automatically.
 
 ---
-[<<-- Previous: ValidationContext Deep Dive](07-validation-context.md) | [Table of Contents](README.md) | [Next: The Async Validation Gap -->>](09-async-validation-gap.md)
+[← Previous: ValidationContext Deep Dive](07-validation-context.md) | [Table of Contents](README.md) | [Next: The Async Validation Gap →](09-async-validation-gap.md)
 ---
