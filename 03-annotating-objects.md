@@ -6,9 +6,7 @@
 
 </nav>
 
-> **Key Reference**
->
-> - [Standard Validators](https://jeffhandley.com/2010-09-22/riaservicesstandardvalidators) (Jeff Handley)
+> **Key Reference:** [Standard Validators][standard-validators]
 
 With the built-in and custom validation attributes in hand, the next step is applying them to your model classes. This chapter covers property-level annotations, type-level annotations, display metadata, and how multiple attributes interact when stacked on a single member.
 
@@ -110,3 +108,5 @@ When `Validator.TryValidateObject` runs with `validateAllProperties: true`, it e
 <a href="02-creating-custom-attributes.md">← Previous: Creating Custom Validation Attributes</a> | <a href="README.md">Table of Contents</a> | <a href="04-programmatic-validation.md">Next: Programmatic Validation →</a>
 
 </nav>
+
+[standard-validators]: https://jeffhandley.com/2010-09-22/riaservicesstandardvalidators

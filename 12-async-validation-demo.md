@@ -6,11 +6,11 @@
 
 </nav>
 
-> **Key Concept:** The [`oroztocil/validation-demo`](https://github.com/dotnet/aspnetcore/tree/oroztocil/validation-demo) branch in `dotnet/aspnetcore` contains a working prototype that demonstrates how async validation can be integrated into the `Microsoft.Extensions.Validation` pipeline — including new base types, a two-phase validation strategy, and sample applications spanning Console, Minimal API, and Blazor.
+> **Key Concept:** The [`oroztocil/validation-demo`][validation-demo-branch] branch in `dotnet/aspnetcore` contains a working prototype that demonstrates how async validation can be integrated into the `Microsoft.Extensions.Validation` pipeline — including new base types, a two-phase validation strategy, and sample applications spanning Console, Minimal API, and Blazor.
 
 ## 1. Overview
 
-The demo lives at [https://github.com/dotnet/aspnetcore/tree/oroztocil/validation-demo](https://github.com/dotnet/aspnetcore/tree/oroztocil/validation-demo) under `src/Validation/`. It builds on the `Microsoft.Extensions.Validation` package introduced in .NET 10, extending its pipeline with first-class async validation support.
+The demo lives at [https://github.com/dotnet/aspnetcore/tree/oroztocil/validation-demo][validation-demo-branch] under `src/Validation/`. It builds on the `Microsoft.Extensions.Validation` package introduced in .NET 10, extending its pipeline with first-class async validation support.
 
 The branch contains:
 
@@ -297,7 +297,7 @@ In this configuration:
 | MVC `DataAnnotationsModelValidator` | ❌ Not done | MVC has separate pipeline |
 | Options `DataAnnotationValidateOptions` | ❌ Not done | Still sync-only |
 | Options Source Generator | ❌ Not done | Still emits sync code |
-| Sync fallback behavior | ❌ Not done | No "Checking..." message when sync path hits async validator |
+| Sync fallback behavior | ❌ Not done | Throws `NotSupportedException` — alternative approaches (e.g., returning invalid) not yet explored |
 
 The "✅ Implemented" items all live within the `Microsoft.Extensions.Validation` layer in `dotnet/aspnetcore`. The "❌ Not done" items would require changes either in `dotnet/runtime` (for the core `Validator` class and `System.ComponentModel.DataAnnotations`) or in additional integration points across both repositories.
 
@@ -309,7 +309,7 @@ The demo's `AsyncValidationAttribute` **seals** the synchronous `IsValid(object?
 
 - `AsyncValidationAttribute` subclasses **cannot** be used with `Validator.TryValidateObject()` — the classic sync validation path.
 - Any code that attempts to use an async validation attribute through the synchronous pipeline will get an immediate, clear exception rather than silently incorrect behavior.
-- This is a **different approach** from the tenet described in Chapter 9, which proposed returning an invalid result with a "Checking..." placeholder message when the sync path encounters an async validator. The demo takes a stricter stance: async validators are simply incompatible with the sync pipeline.
+- This aligns with the tenet described in Chapter 9: sync validation **must not succeed** when async validation remains unexecuted. The demo implements this via exception; returning an invalid result with a placeholder message is another approach under consideration.
 
 ### New Types in `Microsoft.Extensions.Validation`, Not in `System.ComponentModel.DataAnnotations`
 
@@ -346,11 +346,11 @@ The demo branch represents a **partial implementation** focused on the `Microsof
 
 - The demo **validates the core concepts** — two-phase execution works, an async attribute base class works, and the pipeline can be extended to support async validation without breaking existing sync validators.
 - The demo does **not address** the `System.ComponentModel.DataAnnotations` layer — the `Validator` class in `dotnet/runtime` has no new async methods (`TryValidateObjectAsync`, `ValidateObjectAsync`, etc.).
-- The demo does **not address** sync fallback behavior — when an `AsyncValidationAttribute` is encountered through a sync code path, it throws rather than returning a placeholder result.
+- The demo does **not address** alternative sync fallback strategies — when an `AsyncValidationAttribute` is encountered through a sync code path, it throws rather than returning a placeholder result. Both approaches satisfy the "must not succeed" tenet; the final design choice is still open.
 
 For the complete async validation project, each integration point from [Chapter 11](11-integration-history.md) must be assessed for what changes are needed. The full vision would require:
 
-- **`System.ComponentModel.DataAnnotations` changes** (in `dotnet/runtime`) — Adding `ValidationAttribute.IsValidAsync()`, async `Validator` methods, and sync fallback behavior.
+- **`System.ComponentModel.DataAnnotations` changes** (in `dotnet/runtime`) — Adding `ValidationAttribute.IsValidAsync()`, async `Validator` methods, and defining the sync fallback strategy (throw vs. return invalid).
 - **MVC integration** — Updating `DataAnnotationsModelValidator` and the model binding pipeline to support async validation.
 - **Options integration** — Adding async support to `DataAnnotationValidateOptions<T>` and the Options validation source generator.
 - **Blazor integration** — While the demo shows Blazor working through `Microsoft.Extensions.Validation`, deeper integration with `EditContext` and `FieldState` may be needed for real-time field-level async validation.
@@ -363,3 +363,5 @@ The demo branch serves as a **proof of concept** that the two-phase, async-aware
 <a href="11-integration-history.md">← Previous: The History of DataAnnotations Integration Across .NET</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-a-integration-points.md">Next: Appendix A: .NET Integration Points Catalog →</a>
 
 </nav>
+
+[validation-demo-branch]: https://github.com/dotnet/aspnetcore/tree/oroztocil/validation-demo

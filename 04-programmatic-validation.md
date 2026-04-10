@@ -8,10 +8,7 @@
 
 The `Validator` class is the central orchestrator for programmatic validation in `System.ComponentModel.DataAnnotations`. It provides 7 static methods, grouped into three categories, that let you validate objects, properties, and standalone values on demand.
 
-**Key References:**
-
-- [Validator Class API](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validator?view=net-9.0)
-- Source: [Validator.cs](https://github.com/dotnet/runtime/blob/main/src/libraries/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs)
+> **Key References:** [Validator Class API][validator-api] · [Source: Validator.cs][validator-source]
 
 ## Object Validation
 
@@ -87,7 +84,7 @@ flowchart TD
 
 The key insight is **short-circuit behavior**: if Step 1 produces any errors, Steps 2 and 3 are skipped entirely. This is by design — entity-level validation (Steps 2 and 3) often assumes that all property-level constraints are already satisfied.
 
-As Jeff Handley described in the original design:
+From the original design:
 
 > The validation stages are: (1) Required validators, (2) remaining property validators, (3) entity-level validators, (4) IValidatableObject.Validate().
 
@@ -145,3 +142,6 @@ Age: The field Age must be between 13 and 120.
 <a href="03-annotating-objects.md">← Previous: Annotating Objects</a> | <a href="README.md">Table of Contents</a> | <a href="05-aspnet-mvc-validation.md">Next: ASP.NET MVC Automatic Validation →</a>
 
 </nav>
+
+[validator-api]: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validator?view=net-9.0
+[validator-source]: https://github.com/dotnet/runtime/blob/main/src/libraries/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs

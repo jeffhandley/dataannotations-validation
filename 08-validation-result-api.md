@@ -8,10 +8,7 @@
 
 `ValidationResult` is the currency of the DataAnnotations validation system — every validation operation ultimately produces either a `null` (success) or a `ValidationResult` instance (failure). Understanding its design, especially the `Success` sentinel, is essential for writing correct validators.
 
-**Key References:**
-
-- [ValidationResult API](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationresult)
-- Source: [ValidationResult.cs](https://github.com/dotnet/runtime/blob/main/src/libraries/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs)
+> **Key References:** [ValidationResult API][validationresult-api] · [Source: ValidationResult.cs][validationresult-source]
 
 ## The Success Sentinel
 
@@ -44,7 +41,7 @@ protected ValidationResult(ValidationResult validationResult) // copy constructo
 
 ## MemberNames Best Practices
 
-From the blog series, there are three patterns for populating `MemberNames`:
+There are three patterns for populating `MemberNames`:
 
 **Single field — include the member name for UI highlighting:**
 
@@ -76,7 +73,7 @@ When to use each pattern:
 
 ## ValidationException
 
-Source: [ValidationException.cs](https://github.com/dotnet/runtime/blob/main/src/libraries/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationException.cs)
+Source: [ValidationException.cs][validationexception-source]
 
 `ValidationException` is thrown by `Validator.ValidateObject()` and `Validator.ValidateProperty()` when validation fails. It carries full context about the failure:
 
@@ -117,3 +114,7 @@ The key insight: `GetValidationResult` is responsible for calling `FormatErrorMe
 <a href="07-validation-context.md">← Previous: ValidationContext Deep Dive</a> | <a href="README.md">Table of Contents</a> | <a href="09-async-validation-gap.md">Next: The Async Validation Gap →</a>
 
 </nav>
+
+[validationresult-api]: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationresult
+[validationresult-source]: https://github.com/dotnet/runtime/blob/main/src/libraries/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs
+[validationexception-source]: https://github.com/dotnet/runtime/blob/main/src/libraries/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationException.cs

@@ -6,11 +6,7 @@
 
 </nav>
 
-> **Key References**
->
-> - [System.ComponentModel.DataAnnotations Namespace](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations?view=net-9.0)
-> - [Standard Validators](https://jeffhandley.com/2010-09-22/riaservicesstandardvalidators) (Jeff Handley)
-> - Source: [dotnet/runtime DataAnnotations](https://github.com/dotnet/runtime/tree/main/src/libraries/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations)
+> **Key References:** [DataAnnotations Namespace API][da-namespace] · [Standard Validators][standard-validators] · [Source (dotnet/runtime)][da-source]
 
 .NET ships a rich set of built-in validation attributes, all deriving from `ValidationAttribute`. These attributes declaratively express constraints on properties and fields, and the `Validator` class evaluates them at runtime. Understanding each attribute's behavior — especially around null handling — is essential before building custom validators or integrating with frameworks like ASP.NET Core or Blazor.
 
@@ -53,7 +49,7 @@
 
 ## Key Behaviors All Validators Share
 
-> **"Nothing is Required, Except for Required"** — Jeff Handley, [Standard Validators](https://jeffhandley.com/2010-09-22/riaservicesstandardvalidators)
+> **"Nothing is Required, Except for Required"** — [Standard Validators][standard-validators]
 
 This is one of the most important design rules in DataAnnotations: validators like `[Range]`, `[StringLength]`, and `[RegularExpression]` all return **success** for blank or null values. Only `[Required]` rejects nulls and (by default) empty strings. This means that if a property is optional, those validators will silently pass when no value is provided — which is by design. If you want a value to be mandatory *and* constrained, you must stack `[Required]` alongside the other attribute.
 
@@ -77,3 +73,7 @@ Different validators expose additional numbered placeholders beyond `{0}`:
 <a href="00-suggested-reading-order.md">← Previous: Suggested Reading Order</a> | <a href="README.md">Table of Contents</a> | <a href="02-creating-custom-attributes.md">Next: Creating Custom Validation Attributes →</a>
 
 </nav>
+
+[da-namespace]: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations?view=net-9.0
+[standard-validators]: https://jeffhandley.com/2010-09-22/riaservicesstandardvalidators
+[da-source]: https://github.com/dotnet/runtime/tree/main/src/libraries/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations

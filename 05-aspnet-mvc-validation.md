@@ -8,10 +8,7 @@
 
 ASP.NET MVC (and ASP.NET Core) integrates DataAnnotations validation directly into the model-binding pipeline, so validation happens automatically before your action code runs.
 
-**Key References:**
-
-- [Model Validation in ASP.NET Core MVC](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation)
-- [Add Validation to an ASP.NET Core MVC App](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/validation)
+> **Key References:** [Model Validation in ASP.NET Core MVC][mvc-validation] · [Add Validation Tutorial][mvc-validation-tutorial]
 
 ## How MVC Validates Automatically
 
@@ -73,7 +70,7 @@ This is the closest thing to "async validation" in the current ecosystem, but it
 - **Browser-only** — relies on jQuery Unobtrusive Validation
 - **Not available server-side** — the `[Remote]` attribute is skipped during server-side validation entirely
 
-**Reference:** [Remote Validation](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation#remote-attribute)
+**Reference:** [Remote Validation][remote-validation]
 
 ## Blazor Forms Validation
 
@@ -86,7 +83,7 @@ Blazor takes a different approach from MVC, using the `Validator` class directly
 
 This means Blazor validation follows the 3-stage pipeline described in Chapter 4, including the short-circuit behavior. MVC validation does not.
 
-**Reference:** [Blazor Forms Validation](https://learn.microsoft.com/en-us/aspnet/core/blazor/forms/validation)
+**Reference:** [Blazor Forms Validation][blazor-validation]
 
 ## .NET 10: Microsoft.Extensions.Validation
 
@@ -98,13 +95,17 @@ builder.Services.AddValidation();
 
 This is **highly relevant** to the async validation project — it represents a new invocation point for DataAnnotations validation that needs to be considered in any design for async support.
 
-**References:**
-
-- [What's New in ASP.NET Core in .NET 10](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0)
-- [Microsoft.Extensions.Validation NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Validation)
+> **References:** [What's New in ASP.NET Core in .NET 10][aspnet-10-whats-new] · [Microsoft.Extensions.Validation NuGet][extensions-validation-nuget]
 
 <nav>
 
 <a href="04-programmatic-validation.md">← Previous: Programmatic Validation</a> | <a href="README.md">Table of Contents</a> | <a href="06-advanced-custom-validation.md">Next: Advanced Custom Validation →</a>
 
 </nav>
+
+[mvc-validation]: https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation
+[mvc-validation-tutorial]: https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/validation
+[remote-validation]: https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation#remote-attribute
+[blazor-validation]: https://learn.microsoft.com/en-us/aspnet/core/blazor/forms/validation
+[aspnet-10-whats-new]: https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0
+[extensions-validation-nuget]: https://www.nuget.org/packages/Microsoft.Extensions.Validation

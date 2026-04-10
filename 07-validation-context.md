@@ -8,12 +8,7 @@
 
 `ValidationContext` is the bridge between the validation system and the application's runtime environment. Introduced in .NET 4.0 as part of RIA Services, it provides validators with access to the object being validated, service resolution, and arbitrary state — enabling rich, context-aware validation logic.
 
-**Key References:**
-
-- [Providing ValidationContext](https://jeffhandley.com/2010-10-25/riaservicesvalidationcontext) (Jeff Handley)
-- [Using ValidationContext (Cross-Entity Validation)](https://jeffhandley.com/2010-10-25/crossentityvalidation) (Jeff Handley)
-- [ValidationContext API](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationcontext)
-- Source: [ValidationContext.cs](https://github.com/dotnet/runtime/blob/main/src/libraries/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationContext.cs)
+> **Key References:** [Providing ValidationContext][providing-validationcontext] · [Cross-Entity Validation][cross-entity-validation] · [ValidationContext API][validationcontext-api] · [Source: ValidationContext.cs][validationcontext-source]
 
 ## Key Properties
 
@@ -55,7 +50,7 @@ protected override ValidationResult? IsValid(
 }
 ```
 
-As Jeff Handley wrote:
+From the [Providing ValidationContext][providing-validationcontext] post:
 
 > "Consider the scenario where a validator needs to access the database; you certainly wouldn't couple a validation method to your data access layer, would you? Instead, you would make your repository available as a service that your validation method can consume in a loosely-coupled manner."
 
@@ -85,7 +80,7 @@ if (validationContext.Items.TryGetValue("AllowOverBooking", out var value)
 
 ## Cross-Field Validation Using ObjectInstance
 
-Validators can inspect other properties on the object being validated by casting `ObjectInstance` to the expected type. However, there is a key subtlety described by Jeff Handley: **for the property being validated, use the `value` parameter since the property on the object still holds the old value.**
+Validators can inspect other properties on the object being validated by casting `ObjectInstance` to the expected type. However, there is a key subtlety: **for the property being validated, use the `value` parameter since the property on the object still holds the old value.**
 
 Here is a `NoTimeTravel` validator that ensures a meeting's start time is before its end time:
 
@@ -117,7 +112,7 @@ This example demonstrates three key techniques:
 
 ## Cross-Entity Validation Using Services
 
-For validation that spans beyond the object being validated — such as checking against other entities in the system — the `IServiceProvider` pattern shines. Here is the full pattern from Jeff Handley's blog:
+For validation that spans beyond the object being validated — such as checking against other entities in the system — the `IServiceProvider` pattern shines. Here is the full pattern from the [Cross-Entity Validation][cross-entity-validation] post:
 
 ```csharp
 public interface IMeetingDataProvider
@@ -169,3 +164,8 @@ When providing a seed `IServiceProvider`, calls to `GetService` are delegated to
 <a href="06-advanced-custom-validation.md">← Previous: Advanced Custom Validation</a> | <a href="README.md">Table of Contents</a> | <a href="08-validation-result-api.md">Next: The ValidationResult API →</a>
 
 </nav>
+
+[providing-validationcontext]: https://jeffhandley.com/2010-10-25/riaservicesvalidationcontext
+[cross-entity-validation]: https://jeffhandley.com/2010-10-25/crossentityvalidation
+[validationcontext-api]: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationcontext
+[validationcontext-source]: https://github.com/dotnet/runtime/blob/main/src/libraries/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationContext.cs

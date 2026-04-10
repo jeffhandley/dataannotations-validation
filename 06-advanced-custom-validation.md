@@ -8,10 +8,7 @@
 
 Beyond the built-in validation attributes, DataAnnotations provides several extensibility mechanisms for custom business rules — from self-validating objects to reusable cross-field validators.
 
-**Key References:**
-
-- [Entity-Level Validation](https://jeffhandley.com/2010-10-12/entitylevelvalidation) (Jeff Handley)
-- [IValidatableObject Interface](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.ivalidatableobject)
+> **Key References:** [Entity-Level Validation][entity-level-validation] · [IValidatableObject Interface API][ivalidatableobject-api]
 
 ## IValidatableObject — Self-Validating Objects
 
@@ -64,7 +61,7 @@ public class Meeting : IValidatableObject
 
 ## Why Entity-Level Validation Exists
 
-From Jeff Handley's [blog post on entity-level validation](https://jeffhandley.com/2010-10-12/entitylevelvalidation), there are four key reasons why some validation rules belong at the entity level rather than on individual properties:
+The [entity-level validation][entity-level-validation] post identifies four key reasons why some validation rules belong at the entity level rather than on individual properties:
 
 1. **No certain data entry path leads to the error** — the rule involves multiple properties, and any of them could be the one to change
 2. **No clear guidance on which field to change** — the error applies to the relationship between fields, not a single field
@@ -106,7 +103,7 @@ Note the differences from property-level `[CustomValidation]`:
 
 ## Derived Reusable Validators (Cross-Field)
 
-For validation logic that needs to be reused across multiple models, you can derive from an existing `ValidationAttribute`. The following example from Jeff Handley's blog shows a `ConditionallyRequiredAttribute` — a `RequiredAttribute` derivative that only enforces the requirement when another property has a specific value.
+For validation logic that needs to be reused across multiple models, you can derive from an existing `ValidationAttribute`. The following example (from the [Cross-Field Validation][cross-field-validation] post) shows a `ConditionallyRequiredAttribute` — a `RequiredAttribute` derivative that only enforces the requirement when another property has a specific value.
 
 ```csharp
 [AttributeUsage(
@@ -183,3 +180,7 @@ flowchart TD
 <a href="05-aspnet-mvc-validation.md">← Previous: ASP.NET MVC Automatic Validation</a> | <a href="README.md">Table of Contents</a> | <a href="07-validation-context.md">Next: ValidationContext Deep Dive →</a>
 
 </nav>
+
+[entity-level-validation]: https://jeffhandley.com/2010-10-12/entitylevelvalidation
+[ivalidatableobject-api]: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.ivalidatableobject
+[cross-field-validation]: https://jeffhandley.com/2010-10-10/crossfieldvalidation

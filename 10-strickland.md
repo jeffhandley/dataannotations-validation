@@ -6,19 +6,13 @@
 
 </nav>
 
-**Key References:**
-
-- [Strickland Documentation](https://strickland.io) / [GitHub](https://github.com/jeffhandley/strickland)
-- [Strickland: Inspiration](https://github.com/jeffhandley/strickland/blob/master/docs/inspiration.md)
-- [Strickland: Two-Stage Sync/Async Validation](https://github.com/jeffhandley/strickland/blob/master/docs/async-validation/two-stage-sync-async-validation.md)
-- [Strickland: Design Goals](https://github.com/jeffhandley/strickland/blob/master/docs/design-goals.md)
-- [Strickland NPM Package](https://www.npmjs.com/package/strickland)
+> **Key References:** [Strickland][strickland-docs] / [GitHub][strickland-github] · [Inspiration][strickland-inspiration] · [Two-Stage Sync/Async][strickland-two-stage] · [Design Goals][strickland-design-goals] · [NPM][strickland-npm]
 
 ## Background
 
-**Strickland** is a JavaScript validation framework created by Jeff Handley. It was born out of the DataAnnotations validation work done during the .NET RIA Services era (2009–2012), when APIs like `IValidatableObject`, `ValidationResult`, `ValidationContext`, and `Validator` were designed. From the [Inspiration page](https://github.com/jeffhandley/strickland/blob/master/docs/inspiration.md):
+**Strickland** is a JavaScript validation framework born out of the DataAnnotations validation work done during the .NET RIA Services era (2009–2012), when APIs like `IValidatableObject`, `ValidationResult`, `ValidationContext`, and `Validator` were designed. From the [Inspiration page][strickland-inspiration]:
 
-> After working on validation in .NET, Jeff wanted to bring the same principled approach to JavaScript — with the addition of first-class async validation that DataAnnotations never had.
+> After working on validation in .NET, the author wanted to bring the same principled approach to JavaScript — with the addition of first-class async validation that DataAnnotations never had.
 
 Strickland embodies the same validation philosophy as DataAnnotations with a critical addition: **first-class async validation**.
 
@@ -125,13 +119,13 @@ const result = await validateAsync(usernameAvailable, 'marty');
 
 | Strickland | Proposed DataAnnotations |
 |------------|--------------------------|
-| Sync `validate()` returns `{ isValid: false, message: "Checking..." }` | Sync `TryValidateObject()` returns invalid with "Checking username availability..." |
+| Sync `validate()` returns `{ isValid: false, message: "Checking..." }` | Sync `TryValidateObject()` must not succeed when async validators are in scope (throw or return invalid — design TBD) |
 | `validateAsync` property holds a Promise | `IsValidAsync()` returns `Task<ValidationResult>` |
 | `validateAsync()` resolves the Promise | `TryValidateObjectAsync()` awaits all async validators |
 
 ## Strickland's Design Goals (Relevant to DataAnnotations)
 
-From the [design goals](https://github.com/jeffhandley/strickland/blob/master/docs/design-goals.md):
+From the [design goals][strickland-design-goals]:
 
 1. **Validators must operate synchronously AND asynchronously** — Same definition works in both modes
 2. **Validation decoupled from UI** — Validators don't know about forms or components
@@ -157,10 +151,18 @@ function usernameAvailable(username) {
 
 The outer function is a "deferred" validator — it doesn't execute until explicitly called. This pattern could inform DataAnnotations designs where async validation should be opt-in at invocation time.
 
-Reference: [Strickland: Deferred Async Validation](https://github.com/jeffhandley/strickland/blob/master/docs/async-validation/deferred-async-validation.md)
+Reference: [Strickland: Deferred Async Validation][strickland-deferred-async]
 
 <nav>
 
 <a href="09-async-validation-gap.md">← Previous: The Async Validation Gap</a> | <a href="README.md">Table of Contents</a> | <a href="11-integration-history.md">Next: The History of DataAnnotations Integration Across .NET →</a>
 
 </nav>
+
+[strickland-docs]: https://strickland.io
+[strickland-github]: https://github.com/jeffhandley/strickland
+[strickland-inspiration]: https://github.com/jeffhandley/strickland/blob/master/docs/inspiration.md
+[strickland-two-stage]: https://github.com/jeffhandley/strickland/blob/master/docs/async-validation/two-stage-sync-async-validation.md
+[strickland-design-goals]: https://github.com/jeffhandley/strickland/blob/master/docs/design-goals.md
+[strickland-npm]: https://www.npmjs.com/package/strickland
+[strickland-deferred-async]: https://github.com/jeffhandley/strickland/blob/master/docs/async-validation/deferred-async-validation.md

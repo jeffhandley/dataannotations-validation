@@ -61,11 +61,15 @@ DataAnnotations was originally introduced in .NET Framework 3.5 SP1 as part of A
 
 **Async implications:** These are the foundational APIs. Adding async means introducing `ValidatorAsync.TryValidateObjectAsync()` (or equivalent) and `IAsyncValidatableObject` alongside the existing sync surface. Every downstream integration inherits the sync constraint from here.
 
+> **RIA Services context:** WCF RIA Services was the primary driver of the .NET Framework 4.0 DataAnnotations expansion. Async validation was never part of the validation attributes themselves — instead, RIA Services used explicit `[Invoke]` service methods for async checks like username availability, with mutable `ValidationResultCollection` and `INotifyDataErrorInfo` to inject results into the UI after the roundtrip completed. See [Chapter 9](09-async-validation-gap.md#how-ria-services-handled-async-validation) for details.
+>
+> The open-source successor, [OpenRiaServices][openria], continues to maintain this architecture. It targets .NET 8+ and .NET Framework 4.7.2, remains an active .NET Foundation project, and still uses synchronous `Validator.TryValidateObject()` for all entity and changeset validation. The validation pipeline in `DomainService.ValidateChangeSetAsync()` is async in name only — it calls synchronous `ValidateOperations()` internally. This underscores how deeply the sync-only constraint has persisted across the ecosystem.
+
 ### 2. The Port to .NET Core (2014–2016)
 
 **Introduced:** Port began in late 2014 in `dotnet/corefx`, shipped as `System.ComponentModel.Annotations` 4.0.0 with .NET Core 1.0 in June 2016
 
-**Repository:** [dotnet/corefx](https://github.com/dotnet/corefx) (archived) → [dotnet/runtime](https://github.com/dotnet/runtime)
+**Repository:** [dotnet/corefx][dotnet-corefx] (archived) → [dotnet/runtime][dotnet-runtime]
 
 The port from .NET Framework to .NET Core brought `System.ComponentModel.DataAnnotations` into the open-source world. The package shipped as a standalone NuGet package (`System.ComponentModel.Annotations`) through several versions:
 
@@ -75,7 +79,7 @@ The port from .NET Framework to .NET Core brought `System.ComponentModel.DataAnn
 - 5.0.0 — .NET 5
 - Included in the shared framework from .NET 6 onward (no longer a separate NuGet for modern TFMs)
 
-Issue [dotnet/runtime#20200](https://github.com/dotnet/runtime/issues/20200) tracked porting gaps — places where .NET Framework behavior was not fully replicated in the .NET Core port.
+Issue [dotnet/runtime#20200][runtime-20200] tracked porting gaps — places where .NET Framework behavior was not fully replicated in the .NET Core port.
 
 **Validation invocation:** Identical to .NET Framework — `Validator.TryValidateObject()`, `TryValidateProperty()`, `TryValidateValue()`.
 
@@ -85,7 +89,7 @@ Issue [dotnet/runtime#20200](https://github.com/dotnet/runtime/issues/20200) tra
 
 **Introduced:** ASP.NET Core 1.0 (June 2016), development began in 2015
 
-**Repository:** `aspnet/Mvc` (archived) → [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore)
+**Repository:** `aspnet/Mvc` (archived) → [dotnet/aspnetcore][dotnet-aspnetcore]
 
 MVC model validation was a launch feature of ASP.NET Core 1.0. This is arguably the most important consumer of DataAnnotations — and it has a critical architectural detail.
 
@@ -105,14 +109,14 @@ This means MVC has a **separate validation pipeline** from the `Validator` class
 
 **Introduced:** EF Core 1.0 development (2015), shipped June 2016
 
-**Repository:** [dotnet/efcore](https://github.com/dotnet/efcore)
+**Repository:** [dotnet/efcore][dotnet-efcore]
 
 **Key PRs:**
-- [dotnet/efcore#2463](https://github.com/dotnet/efcore/pull/2463) — Initial DataAnnotations conventions
-- [dotnet/efcore#2515](https://github.com/dotnet/efcore/pull/2515) — Additional convention support
-- [dotnet/efcore#2614](https://github.com/dotnet/efcore/pull/2614) — Further refinements
+- [dotnet/efcore#2463][efcore-pr-2463] — Initial DataAnnotations conventions
+- [dotnet/efcore#2515][efcore-pr-2515] — Additional convention support
+- [dotnet/efcore#2614][efcore-pr-2614] — Further refinements
 
-**Design issue:** [dotnet/efcore#107](https://github.com/dotnet/efcore/issues/107)
+**Design issue:** [dotnet/efcore#107][efcore-107]
 
 EF Core uses DataAnnotations attributes for **schema definition only** — mapping entities to tables, defining keys, setting column lengths, and configuring relationships. It reads attributes like `[Key]`, `[Required]`, `[MaxLength]`, `[Table]`, and `[Column]` to configure the model during `OnModelCreating`.
 
@@ -126,15 +130,15 @@ EF Core does **NOT** call `Validator.TryValidateObject()`. It does not perform r
 
 **Introduced:** ASP.NET Core 2.2 (December 2018)
 
-**Repository:** [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore) (originally), now in [dotnet/runtime](https://github.com/dotnet/runtime) under `Microsoft.Extensions.Options.DataAnnotations`
+**Repository:** [dotnet/aspnetcore][dotnet-aspnetcore] (originally), now in [dotnet/runtime][dotnet-runtime] under `Microsoft.Extensions.Options.DataAnnotations`
 
-**Key issue:** [dotnet/aspnetcore#3385](https://github.com/dotnet/aspnetcore/issues/3385)
+**Key issue:** [dotnet/aspnetcore#3385][aspnetcore-3385]
 
 The `ValidateDataAnnotations()` extension method on `OptionsBuilder<T>` added DataAnnotations validation to the options pattern. When combined with `ValidateOnStart()`, options are validated during host startup.
 
 The implementation class `DataAnnotationValidateOptions<T>` calls `Validator.TryValidateObject()` directly, passing `validateAllProperties: true`.
 
-`IServiceProvider` passthrough was added in PR [dotnet/extensions#3032](https://github.com/dotnet/extensions/pull/3032), allowing validation attributes to resolve services from the DI container via `ValidationContext.GetService()`.
+`IServiceProvider` passthrough was added in PR [dotnet/extensions#3032][extensions-pr-3032], allowing validation attributes to resolve services from the DI container via `ValidationContext.GetService()`.
 
 **Validation invocation:** `Validator.TryValidateObject(options, validationContext, results, validateAllProperties: true)` — direct call.
 
@@ -144,9 +148,9 @@ The implementation class `DataAnnotationValidateOptions<T>` calls `Validator.Try
 
 **Introduced:** ASP.NET Core 3.0 Preview 3 (February 2019)
 
-**Repository:** [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore)
+**Repository:** [dotnet/aspnetcore][dotnet-aspnetcore]
 
-**Key PR:** [dotnet/aspnetcore#7614](https://github.com/dotnet/aspnetcore/pull/7614) by SteveSandersonMS
+**Key PR:** [dotnet/aspnetcore#7614][aspnetcore-pr-7614] by SteveSandersonMS
 
 This PR introduced the Blazor forms and validation infrastructure:
 - `EditContext` — tracks form state and validation messages
@@ -173,7 +177,7 @@ This was **never implemented**. Six years later, Blazor Forms validation remains
 
 **Introduced:** `INotifyDataErrorInfo` pattern has existed since .NET Framework 4.5; `CommunityToolkit.Mvvm` `ObservableValidator` released September 2020
 
-**Repository:** [CommunityToolkit/dotnet](https://github.com/CommunityToolkit/dotnet)
+**Repository:** [CommunityToolkit/dotnet][community-toolkit-dotnet]
 
 WPF and WinForms do not have a built-in `DataAnnotationsValidator` component. Instead, they rely on the `INotifyDataErrorInfo` interface for data binding validation. MVVM frameworks bridge the gap.
 
@@ -191,9 +195,9 @@ WPF and WinForms do not have a built-in `DataAnnotationsValidator` component. In
 
 **Introduced:** .NET 8 (November 2023)
 
-**Repository:** [dotnet/runtime](https://github.com/dotnet/runtime)
+**Repository:** [dotnet/runtime][dotnet-runtime]
 
-**Key PR:** [dotnet/runtime#87587](https://github.com/dotnet/runtime/pull/87587)
+**Key PR:** [dotnet/runtime#87587][runtime-pr-87587]
 
 The `[OptionsValidator]` attribute triggers a Roslyn source generator that emits validation code at compile time, avoiding the reflection overhead of `Validator.TryValidateObject()`. The generated code calls `Validator.TryValidateValue()` per property with the property's validation attributes.
 
@@ -207,9 +211,9 @@ The generated code in `Emitter.cs` produces synchronous `Validate()` methods tha
 
 **Introduced:** .NET 9 (November 2024)
 
-**Repository:** [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore)
+**Repository:** [dotnet/aspnetcore][dotnet-aspnetcore]
 
-**Key PR:** [dotnet/aspnetcore#56225](https://github.com/dotnet/aspnetcore/pull/56225)
+**Key PR:** [dotnet/aspnetcore#56225][aspnetcore-pr-56225]
 
 `Microsoft.AspNetCore.OpenApi` reads DataAnnotations attributes to generate OpenAPI schema metadata. It maps:
 - `[Required]` → `required` in the schema
@@ -228,11 +232,11 @@ This is a **metadata-only** consumer. It reads attributes at startup to build sc
 
 **Introduced:** .NET 10 (preview, 2025)
 
-**Repository:** [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore)
+**Repository:** [dotnet/aspnetcore][dotnet-aspnetcore]
 
-**Key PR:** [dotnet/aspnetcore#60724](https://github.com/dotnet/aspnetcore/pull/60724)
+**Key PR:** [dotnet/aspnetcore#60724][aspnetcore-pr-60724]
 
-**Design issue:** [dotnet/aspnetcore#46349](https://github.com/dotnet/aspnetcore/issues/46349)
+**Design issue:** [dotnet/aspnetcore#46349][aspnetcore-46349]
 
 This is the newest integration point and the **closest to async-ready**. `Microsoft.Extensions.Validation` provides a `ValidateAsync()` method that is itself async, but it calls synchronous `ValidationAttribute.IsValid()` underneath. The package was designed for Minimal API endpoint validation in .NET 10.
 
@@ -246,7 +250,7 @@ The async method signature means the pipeline is already structured to support t
 
 **Introduced:** .NET Aspire 8.0+ (2024)
 
-**Repository:** [dotnet/aspire](https://github.com/dotnet/aspire)
+**Repository:** [dotnet/aspire][dotnet-aspire]
 
 .NET Aspire is not a new integration point for DataAnnotations — it uses the existing `Options.DataAnnotations` pattern. Aspire components configure options with `ValidateDataAnnotations()` and `ValidateOnStart()` to validate configuration during host startup.
 
@@ -288,3 +292,23 @@ Aspire is listed here because it is a significant and growing consumer of the op
 <a href="10-strickland.md">← Previous: Strickland — Parallel Concepts and Async Validation</a> | <a href="README.md">Table of Contents</a> | <a href="12-async-validation-demo.md">Next: The Async Validation Prototype →</a>
 
 </nav>
+
+[dotnet-corefx]: https://github.com/dotnet/corefx
+[dotnet-runtime]: https://github.com/dotnet/runtime
+[runtime-20200]: https://github.com/dotnet/runtime/issues/20200
+[dotnet-aspnetcore]: https://github.com/dotnet/aspnetcore
+[dotnet-efcore]: https://github.com/dotnet/efcore
+[efcore-pr-2463]: https://github.com/dotnet/efcore/pull/2463
+[efcore-pr-2515]: https://github.com/dotnet/efcore/pull/2515
+[efcore-pr-2614]: https://github.com/dotnet/efcore/pull/2614
+[efcore-107]: https://github.com/dotnet/efcore/issues/107
+[aspnetcore-3385]: https://github.com/dotnet/aspnetcore/issues/3385
+[extensions-pr-3032]: https://github.com/dotnet/extensions/pull/3032
+[aspnetcore-pr-7614]: https://github.com/dotnet/aspnetcore/pull/7614
+[community-toolkit-dotnet]: https://github.com/CommunityToolkit/dotnet
+[runtime-pr-87587]: https://github.com/dotnet/runtime/pull/87587
+[aspnetcore-pr-56225]: https://github.com/dotnet/aspnetcore/pull/56225
+[aspnetcore-pr-60724]: https://github.com/dotnet/aspnetcore/pull/60724
+[aspnetcore-46349]: https://github.com/dotnet/aspnetcore/issues/46349
+[dotnet-aspire]: https://github.com/dotnet/aspire
+[openria]: https://github.com/OpenRIAServices/OpenRiaServices

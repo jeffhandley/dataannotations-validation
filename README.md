@@ -22,10 +22,13 @@ This repository contains comprehensive training material for .NET's `System.Comp
 
 ## About This Material
 
-- Content is drawn from source code analysis of [dotnet/runtime](https://github.com/dotnet/runtime), official Microsoft documentation, Jeff Handley's 2010 RIA Services Validation blog series, and the [Strickland](https://github.com/jeffhandley/strickland) JavaScript validation framework
-- DataAnnotations validation saw its most significant innovation during the .NET RIA Services era (2009–2012), when `IValidatableObject`, `ValidationResult`, `ValidationContext`, and `Validator` were designed and refined; Jeff Handley's blog series from that period remains one of the most thorough walkthroughs of the system
+- Content is drawn from source code analysis of [dotnet/runtime][dotnet-runtime], official Microsoft documentation, the [RIA Services Validation blog series][ria-series] (2010), and the [Strickland][strickland] JavaScript validation framework
 - The material targets team members who will work on adding async validation to DataAnnotations
 
 ## License
 
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+[dotnet-runtime]: https://github.com/dotnet/runtime
+[ria-series]: https://jeffhandley.com/2010-09-22/riaservicesstandardvalidators
+[strickland]: https://github.com/jeffhandley/strickland

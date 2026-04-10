@@ -6,11 +6,7 @@
 
 </nav>
 
-> **Key References**
->
-> - [Custom Validation Methods](https://jeffhandley.com/2010-09-26/riaservicescustomvalidationmethods) (Jeff Handley)
-> - [Custom Reusable Validators](https://jeffhandley.com/2010-09-26/riaservicescustomreusablevalidators) (Jeff Handley)
-> - [ValidationAttribute API](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationattribute)
+> **Key References:** [Custom Validation Methods][custom-validation-methods] · [Custom Reusable Validators][custom-reusable-validators] · [ValidationAttribute API][validation-attribute-api]
 
 When the built-in attributes don't cover your business rules, you have two approaches for creating custom validators: deriving from `ValidationAttribute` for reusable validators, or using `[CustomValidation]` for one-off business logic.
 
@@ -47,7 +43,7 @@ The base class uses an internal `_hasBaseIsValid` flag to detect which overload 
 
 > *"For a fun programming challenge — Figure out how ValidationAttribute can determine which version of IsValid has been overridden and should therefore be called during validation."*
 >
-> — Jeff Handley, [Custom Reusable Validators](https://jeffhandley.com/2010-09-26/riaservicescustomreusablevalidators)
+> — [Custom Reusable Validators][custom-reusable-validators]
 
 ## Approach 2: Using CustomValidationAttribute
 
@@ -77,7 +73,7 @@ public static class MeetingValidators
 
 ## 10 Rules for Custom Validation Methods
 
-From Jeff Handley's [Custom Validation Methods](https://jeffhandley.com/2010-09-26/riaservicescustomvalidationmethods):
+The [Custom Validation Methods][custom-validation-methods] post outlines these rules:
 
 1. The method's class must be public.
 2. The class can be static or instance (but the method itself must be static).
@@ -102,3 +98,7 @@ From Jeff Handley's [Custom Validation Methods](https://jeffhandley.com/2010-09-
 <a href="01-built-in-validation-attributes.md">← Previous: Built-In Validation Attributes</a> | <a href="README.md">Table of Contents</a> | <a href="03-annotating-objects.md">Next: Annotating Objects for Validation →</a>
 
 </nav>
+
+[custom-validation-methods]: https://jeffhandley.com/2010-09-26/riaservicescustomvalidationmethods
+[custom-reusable-validators]: https://jeffhandley.com/2010-09-26/riaservicescustomreusablevalidators
+[validation-attribute-api]: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationattribute
