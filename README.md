@@ -80,16 +80,26 @@ DataAnnotations validation saw its most significant innovation during the .NET R
 
 ## About This Material
 
-- Content is drawn from source code analysis of [dotnet/runtime][dotnet-runtime], official Microsoft documentation, the [RIA Services Validation blog series][ria-series] (2010), and the [Strickland][strickland] JavaScript validation framework
-- The material targets team members who will work on adding async validation to DataAnnotations
+- **Core source analysis** — [dotnet/runtime][dotnet-runtime], [dotnet/aspnetcore][dotnet-aspnetcore], [dotnet/efcore][dotnet-efcore], and [dotnet/aspire][dotnet-aspire] repositories, tracing validation integration history through PRs and commits
+- **Historical foundation** — The [RIA Services Validation blog series][ria-series] (2010) and research into how RIA Services and [OpenRiaServices][openriaservices] approached async validation patterns
+- **Official documentation** — Microsoft Learn conceptual and API docs for ASP.NET Core MVC, Blazor, Options pattern, EF Core, OpenAPI, WPF, and WinForms validation
+- **Async validation prototype** — Analysis of the [`oroztocil/validation-demo`][validation-demo-branch] branch and the [Microsoft.Extensions.Validation][aspnetcore-46349] design
+- **Ecosystem research** — [Strickland][strickland] (JavaScript validation framework), [MiniValidation][minivalidation] (Damian Edwards), [FluentValidation][fluentvalidation], Blazor component vendors (MudBlazor, Radzen, Telerik, Syncfusion, DevExpress), API frameworks (FastEndpoints, ServiceStack), and schema generators (Swashbuckle, NSwag)
+- The material targets team members who will work on adding async validation across the .NET product suite
 
 ## License
 
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 [dotnet-runtime]: https://github.com/dotnet/runtime
+[dotnet-aspnetcore]: https://github.com/dotnet/aspnetcore
+[dotnet-efcore]: https://github.com/dotnet/efcore
+[dotnet-aspire]: https://github.com/dotnet/aspire
 [ria-series]: https://jeffhandley.com/2010-09-22/riaservicesstandardvalidators
+[openriaservices]: https://github.com/OpenRIAServices/OpenRiaServices
 [strickland]: https://github.com/jeffhandley/strickland
+[minivalidation]: https://github.com/DamianEdwards/MiniValidation
+[fluentvalidation]: https://github.com/FluentValidation/FluentValidation
 [blog-standard-validators]: https://jeffhandley.com/2010-09-22/riaservicesstandardvalidators
 [blog-custom-methods]: https://jeffhandley.com/2010-09-26/riaservicescustomvalidationmethods
 [blog-custom-reusable]: https://jeffhandley.com/2010-09-26/riaservicescustomreusablevalidators
