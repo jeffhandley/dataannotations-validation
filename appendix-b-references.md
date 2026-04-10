@@ -1,8 +1,10 @@
 # Appendix B: Complete Reference Link Library
 
----
-[← Previous: .NET Integration Points Catalog](appendix-a-integration-points.md) | [Table of Contents](README.md)
----
+<nav>
+
+<a href="appendix-a-integration-points.md">← Previous: .NET Integration Points Catalog</a> | <a href="README.md">Table of Contents</a>
+
+</nav>
 
 ## .NET API Documentation
 
@@ -121,6 +123,8 @@
 - [EF Core DataAnnotations conventions PR (dotnet/efcore#2463)](https://github.com/dotnet/efcore/pull/2463)
 - [Options.DataAnnotations design issue (dotnet/aspnetcore#3385)](https://github.com/dotnet/aspnetcore/issues/3385)
 
----
-[← Previous: .NET Integration Points Catalog](appendix-a-integration-points.md) | [Table of Contents](README.md)
----
+<nav>
+
+<a href="appendix-a-integration-points.md">← Previous: .NET Integration Points Catalog</a> | <a href="README.md">Table of Contents</a>
+
+</nav>

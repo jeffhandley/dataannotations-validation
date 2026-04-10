@@ -1,8 +1,10 @@
 # Suggested Reading Order
 
----
-[Table of Contents](README.md) | [Next: Built-In Validation Attributes →](01-built-in-validation-attributes.md)
----
+<nav>
+
+<a href="README.md">Table of Contents</a> | <a href="01-built-in-validation-attributes.md">Next: Built-In Validation Attributes →</a>
+
+</nav>
 
 For team members who are new to DataAnnotations validation, this recommended reading order starts with the foundational blog series, moves through official API documentation, then application model integration, and finishes with async validation concepts.
 
@@ -57,6 +59,8 @@ DataAnnotations validation saw its most significant innovation during the .NET R
 28. [Microsoft.Extensions.Validation design issue (dotnet/aspnetcore#46349)](https://github.com/dotnet/aspnetcore/issues/46349) — Unified validation design proposal
 29. [Minimal API validation PR (dotnet/aspnetcore#60724)](https://github.com/dotnet/aspnetcore/pull/60724) — Core implementation of Minimal API validation
 
----
-[Table of Contents](README.md) | [Next: Built-In Validation Attributes →](01-built-in-validation-attributes.md)
----
+<nav>
+
+<a href="README.md">Table of Contents</a> | <a href="01-built-in-validation-attributes.md">Next: Built-In Validation Attributes →</a>
+
+</nav>

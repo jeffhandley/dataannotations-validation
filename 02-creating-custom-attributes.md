@@ -1,8 +1,10 @@
 # Chapter 2: Creating Custom Validation Attributes
 
----
-[← Previous: Built-In Validation Attributes](01-built-in-validation-attributes.md) | [Table of Contents](README.md) | [Next: Annotating Objects for Validation →](03-annotating-objects.md)
----
+<nav>
+
+<a href="01-built-in-validation-attributes.md">← Previous: Built-In Validation Attributes</a> | <a href="README.md">Table of Contents</a> | <a href="03-annotating-objects.md">Next: Annotating Objects for Validation →</a>
+
+</nav>
 
 > **Key References**
 >
@@ -95,6 +97,8 @@ From Jeff Handley's [Custom Validation Methods](https://jeffhandley.com/2010-09-
 | **Deriving from `ValidationAttribute`** | Reusable validators applied across many models — date ranges, format checks, domain-specific constraints. These become part of your validation library. |
 | **`[CustomValidation]`** | One-off business logic tied to a specific model — cross-property checks, rules that reference external context, or validation that doesn't warrant its own attribute class. |
 
----
-[← Previous: Built-In Validation Attributes](01-built-in-validation-attributes.md) | [Table of Contents](README.md) | [Next: Annotating Objects for Validation →](03-annotating-objects.md)
----
+<nav>
+
+<a href="01-built-in-validation-attributes.md">← Previous: Built-In Validation Attributes</a> | <a href="README.md">Table of Contents</a> | <a href="03-annotating-objects.md">Next: Annotating Objects for Validation →</a>
+
+</nav>

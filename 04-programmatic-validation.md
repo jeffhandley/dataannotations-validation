@@ -1,8 +1,10 @@
 # Chapter 4: Programmatic (Manual) Validation
 
----
-[← Previous: Annotating Objects](03-annotating-objects.md) | [Table of Contents](README.md) | [Next: ASP.NET MVC Automatic Validation →](05-aspnet-mvc-validation.md)
----
+<nav>
+
+<a href="03-annotating-objects.md">← Previous: Annotating Objects</a> | <a href="README.md">Table of Contents</a> | <a href="05-aspnet-mvc-validation.md">Next: ASP.NET MVC Automatic Validation →</a>
+
+</nav>
 
 The `Validator` class is the central orchestrator for programmatic validation in `System.ComponentModel.DataAnnotations`. It provides 7 static methods, grouped into three categories, that let you validate objects, properties, and standalone values on demand.
 
@@ -138,6 +140,8 @@ Email: The Email field is not a valid e-mail address.
 Age: The field Age must be between 13 and 120.
 ```
 
----
-[← Previous: Annotating Objects](03-annotating-objects.md) | [Table of Contents](README.md) | [Next: ASP.NET MVC Automatic Validation →](05-aspnet-mvc-validation.md)
----
+<nav>
+
+<a href="03-annotating-objects.md">← Previous: Annotating Objects</a> | <a href="README.md">Table of Contents</a> | <a href="05-aspnet-mvc-validation.md">Next: ASP.NET MVC Automatic Validation →</a>
+
+</nav>

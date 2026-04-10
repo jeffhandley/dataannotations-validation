@@ -1,8 +1,10 @@
 # Chapter 1: Built-In Validation Attributes
 
----
-[← Previous: Suggested Reading Order](00-suggested-reading-order.md) | [Table of Contents](README.md) | [Next: Creating Custom Validation Attributes →](02-creating-custom-attributes.md)
----
+<nav>
+
+<a href="00-suggested-reading-order.md">← Previous: Suggested Reading Order</a> | <a href="README.md">Table of Contents</a> | <a href="02-creating-custom-attributes.md">Next: Creating Custom Validation Attributes →</a>
+
+</nav>
 
 > **Key References**
 >
@@ -70,6 +72,8 @@ Different validators expose additional numbered placeholders beyond `{0}`:
 4. **`[StringLength(max, MinimumLength = min)]`** — `{1}` = maximum length, `{2}` = minimum length (note: `{2}` is the *minimum*, not the other way around!).
 5. **`[RegularExpression(pattern)]`** — `{1}` = the regex pattern.
 
----
-[← Previous: Suggested Reading Order](00-suggested-reading-order.md) | [Table of Contents](README.md) | [Next: Creating Custom Validation Attributes →](02-creating-custom-attributes.md)
----
+<nav>
+
+<a href="00-suggested-reading-order.md">← Previous: Suggested Reading Order</a> | <a href="README.md">Table of Contents</a> | <a href="02-creating-custom-attributes.md">Next: Creating Custom Validation Attributes →</a>
+
+</nav>

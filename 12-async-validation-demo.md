@@ -1,8 +1,10 @@
 # Chapter 12: The Async Validation Prototype — A Working Demo
 
----
-[← Previous: The History of DataAnnotations Integration Across .NET](11-integration-history.md) | [Table of Contents](README.md) | [Next: Appendix A: .NET Integration Points Catalog →](appendix-a-integration-points.md)
----
+<nav>
+
+<a href="11-integration-history.md">← Previous: The History of DataAnnotations Integration Across .NET</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-a-integration-points.md">Next: Appendix A: .NET Integration Points Catalog →</a>
+
+</nav>
 
 > **Key Concept:** The [`oroztocil/validation-demo`](https://github.com/dotnet/aspnetcore/tree/oroztocil/validation-demo) branch in `dotnet/aspnetcore` contains a working prototype that demonstrates how async validation can be integrated into the `Microsoft.Extensions.Validation` pipeline — including new base types, a two-phase validation strategy, and sample applications spanning Console, Minimal API, and Blazor.
 
@@ -356,6 +358,8 @@ For the complete async validation project, each integration point from [Chapter 
 
 The demo branch serves as a **proof of concept** that the two-phase, async-aware validation pipeline is viable and can be integrated into real application scenarios. It provides a concrete foundation for the broader design discussions that will shape async validation across the .NET ecosystem.
 
----
-[← Previous: The History of DataAnnotations Integration Across .NET](11-integration-history.md) | [Table of Contents](README.md) | [Next: Appendix A: .NET Integration Points Catalog →](appendix-a-integration-points.md)
----
+<nav>
+
+<a href="11-integration-history.md">← Previous: The History of DataAnnotations Integration Across .NET</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-a-integration-points.md">Next: Appendix A: .NET Integration Points Catalog →</a>
+
+</nav>

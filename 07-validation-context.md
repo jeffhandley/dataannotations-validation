@@ -1,8 +1,10 @@
 # Chapter 7: ValidationContext Deep Dive
 
----
-[← Previous: Advanced Custom Validation](06-advanced-custom-validation.md) | [Table of Contents](README.md) | [Next: The ValidationResult API →](08-validation-result-api.md)
----
+<nav>
+
+<a href="06-advanced-custom-validation.md">← Previous: Advanced Custom Validation</a> | <a href="README.md">Table of Contents</a> | <a href="08-validation-result-api.md">Next: The ValidationResult API →</a>
+
+</nav>
 
 `ValidationContext` is the bridge between the validation system and the application's runtime environment. Introduced in .NET 4.0 as part of RIA Services, it provides validators with access to the object being validated, service resolution, and arbitrary state — enabling rich, context-aware validation logic.
 
@@ -162,6 +164,8 @@ public ValidationContext(object instance)
 
 When providing a seed `IServiceProvider`, calls to `GetService` are delegated to it. The `Items` dictionary is seeded from the provided dictionary (if any) and can be added to after construction — validators can both read and write to it during the validation process.
 
----
-[← Previous: Advanced Custom Validation](06-advanced-custom-validation.md) | [Table of Contents](README.md) | [Next: The ValidationResult API →](08-validation-result-api.md)
----
+<nav>
+
+<a href="06-advanced-custom-validation.md">← Previous: Advanced Custom Validation</a> | <a href="README.md">Table of Contents</a> | <a href="08-validation-result-api.md">Next: The ValidationResult API →</a>
+
+</nav>
