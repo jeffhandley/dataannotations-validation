@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="11-integration-history.md">← Previous: The History of DataAnnotations Integration Across .NET</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-a-integration-points.md">Next: Appendix A: .NET Integration Points Catalog →</a>
+<a href="11-integration-history.md">← Previous: The History of DataAnnotations Integration Across .NET</a> | <a href="README.md">Table of Contents</a> | <a href="13-object-graph-validation.md">Next: Object Graph Validation →</a>
 
 </nav>
 
@@ -360,7 +360,7 @@ The demo branch serves as a **proof of concept** that the two-phase, async-aware
 
 <nav>
 
-<a href="11-integration-history.md">← Previous: The History of DataAnnotations Integration Across .NET</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-a-integration-points.md">Next: Appendix A: .NET Integration Points Catalog →</a>
+<a href="11-integration-history.md">← Previous: The History of DataAnnotations Integration Across .NET</a> | <a href="README.md">Table of Contents</a> | <a href="13-object-graph-validation.md">Next: Object Graph Validation →</a>
 
 </nav>
 

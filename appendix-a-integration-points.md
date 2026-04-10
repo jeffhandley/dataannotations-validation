@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="12-async-validation-demo.md">← Previous: The Async Validation Prototype — A Working Demo</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-b-references.md">Next: Appendix B: Complete Reference Link Library →</a>
+<a href="13-object-graph-validation.md">← Previous: Object Graph Validation</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-b-references.md">Next: Appendix B: Complete Reference Link Library →</a>
 
 </nav>
 
@@ -145,6 +145,6 @@ graph TB
 
 <nav>
 
-<a href="12-async-validation-demo.md">← Previous: The Async Validation Prototype — A Working Demo</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-b-references.md">Next: Appendix B: Complete Reference Link Library →</a>
+<a href="13-object-graph-validation.md">← Previous: Object Graph Validation</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-b-references.md">Next: Appendix B: Complete Reference Link Library →</a>
 
 </nav>
