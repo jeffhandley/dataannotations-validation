@@ -1,7 +1,7 @@
 # Chapter 2: Creating Custom Validation Attributes
 
 ---
-[<<-- Previous: Built-In Validation Attributes](01-built-in-validation-attributes.md) | [Table of Contents](README.md) | [Next: Annotating Objects for Validation -->>\](03-annotating-objects.md)
+[<<-- Previous: Built-In Validation Attributes](01-built-in-validation-attributes.md) | [Table of Contents](README.md) | [Next: Annotating Objects for Validation -->>](03-annotating-objects.md)
 ---
 
 > **Key References**
@@ -96,5 +96,5 @@ From Jeff Handley's [Custom Validation Methods](https://jeffhandley.com/2010-09-
 | **`[CustomValidation]`** | One-off business logic tied to a specific model — cross-property checks, rules that reference external context, or validation that doesn't warrant its own attribute class. |
 
 ---
-[<<-- Previous: Built-In Validation Attributes](01-built-in-validation-attributes.md) | [Table of Contents](README.md) | [Next: Annotating Objects for Validation -->>\](03-annotating-objects.md)
+[<<-- Previous: Built-In Validation Attributes](01-built-in-validation-attributes.md) | [Table of Contents](README.md) | [Next: Annotating Objects for Validation -->>](03-annotating-objects.md)
 ---

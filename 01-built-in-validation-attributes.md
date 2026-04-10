@@ -1,7 +1,7 @@
 # Chapter 1: Built-In Validation Attributes
 
 ---
-[<<-- Previous: Suggested Reading Order](00-suggested-reading-order.md) | [Table of Contents](README.md) | [Next: Creating Custom Validation Attributes -->>\](02-creating-custom-attributes.md)
+[<<-- Previous: Suggested Reading Order](00-suggested-reading-order.md) | [Table of Contents](README.md) | [Next: Creating Custom Validation Attributes -->>](02-creating-custom-attributes.md)
 ---
 
 > **Key References**
@@ -71,5 +71,5 @@ Different validators expose additional numbered placeholders beyond `{0}`:
 5. **`[RegularExpression(pattern)]`** — `{1}` = the regex pattern.
 
 ---
-[<<-- Previous: Suggested Reading Order](00-suggested-reading-order.md) | [Table of Contents](README.md) | [Next: Creating Custom Validation Attributes -->>\](02-creating-custom-attributes.md)
+[<<-- Previous: Suggested Reading Order](00-suggested-reading-order.md) | [Table of Contents](README.md) | [Next: Creating Custom Validation Attributes -->>](02-creating-custom-attributes.md)
 ---

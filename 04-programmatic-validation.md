@@ -1,7 +1,7 @@
 # Chapter 4: Programmatic (Manual) Validation
 
 ---
-[<<-- Previous: Annotating Objects](03-annotating-objects.md) | [Table of Contents](README.md) | [Next: ASP.NET MVC Automatic Validation -->>\](05-aspnet-mvc-validation.md)
+[<<-- Previous: Annotating Objects](03-annotating-objects.md) | [Table of Contents](README.md) | [Next: ASP.NET MVC Automatic Validation -->>](05-aspnet-mvc-validation.md)
 ---
 
 The `Validator` class is the central orchestrator for programmatic validation in `System.ComponentModel.DataAnnotations`. It provides 7 static methods, grouped into three categories, that let you validate objects, properties, and standalone values on demand.
@@ -139,5 +139,5 @@ Age: The field Age must be between 13 and 120.
 ```
 
 ---
-[<<-- Previous: Annotating Objects](03-annotating-objects.md) | [Table of Contents](README.md) | [Next: ASP.NET MVC Automatic Validation -->>\](05-aspnet-mvc-validation.md)
+[<<-- Previous: Annotating Objects](03-annotating-objects.md) | [Table of Contents](README.md) | [Next: ASP.NET MVC Automatic Validation -->>](05-aspnet-mvc-validation.md)
 ---

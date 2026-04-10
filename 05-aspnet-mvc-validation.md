@@ -1,7 +1,7 @@
 # Chapter 5: ASP.NET MVC Automatic Validation
 
 ---
-[<<-- Previous: Programmatic Validation](04-programmatic-validation.md) | [Table of Contents](README.md) | [Next: Advanced Custom Validation -->>\](06-advanced-custom-validation.md)
+[<<-- Previous: Programmatic Validation](04-programmatic-validation.md) | [Table of Contents](README.md) | [Next: Advanced Custom Validation -->>](06-advanced-custom-validation.md)
 ---
 
 ASP.NET MVC (and ASP.NET Core) integrates DataAnnotations validation directly into the model-binding pipeline, so validation happens automatically before your action code runs.
@@ -20,7 +20,7 @@ The model-binding pipeline performs validation in a series of steps:
 3. **Populates `ModelState`** with the results — one entry per property, with errors attached
 4. **Action checks `ModelState.IsValid`** to decide whether to proceed
 
-**Important detail:** MVC does **not** call `Validator.TryValidateObject()`. Instead, `DataAnnotationsModelValidator` calls `Attribute.GetValidationResult(value, validationContext)` for each attribute individually. This is a distinct invocation path from the `Validator` class, which means some behaviors differ — notably around short-circuiting and the order of evaluation.
+**Important detail:** MVC does **not** call `Validator.TryValidateObject()`. Instead, `DataAnnotationsModelValidator` calls `Attribute.GetValidationResult(value, validationContext)` for each attribute individually. This is a distinct invocation path from the `Validator` class, which means some behaviors differ — notably around short-circuiting and the order of evaluation. This has significant implications for async validation — MVC's separate pipeline means it requires its own async changes, independent of any updates to the core `Validator` class. See [Chapter 11](11-integration-history.md) for the full history of how this and other integrations were built.
 
 ```mermaid
 flowchart LR
@@ -102,5 +102,5 @@ This is **highly relevant** to the async validation project — it represents a 
 - [Microsoft.Extensions.Validation NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Validation)
 
 ---
-[<<-- Previous: Programmatic Validation](04-programmatic-validation.md) | [Table of Contents](README.md) | [Next: Advanced Custom Validation -->>\](06-advanced-custom-validation.md)
+[<<-- Previous: Programmatic Validation](04-programmatic-validation.md) | [Table of Contents](README.md) | [Next: Advanced Custom Validation -->>](06-advanced-custom-validation.md)
 ---

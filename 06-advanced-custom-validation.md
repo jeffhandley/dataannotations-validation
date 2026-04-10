@@ -1,7 +1,7 @@
 # Chapter 6: Advanced Custom Validation
 
 ---
-[<<-- Previous: ASP.NET MVC Automatic Validation](05-aspnet-mvc-validation.md) | [Table of Contents](README.md) | [Next: ValidationContext Deep Dive -->>\](07-validation-context.md)
+[<<-- Previous: ASP.NET MVC Automatic Validation](05-aspnet-mvc-validation.md) | [Table of Contents](README.md) | [Next: ValidationContext Deep Dive -->>](07-validation-context.md)
 ---
 
 Beyond the built-in validation attributes, DataAnnotations provides several extensibility mechanisms for custom business rules — from self-validating objects to reusable cross-field validators.
@@ -177,5 +177,5 @@ flowchart TD
 | IValidatableObject | Complex object-level logic | Last — only after all attributes pass |
 
 ---
-[<<-- Previous: ASP.NET MVC Automatic Validation](05-aspnet-mvc-validation.md) | [Table of Contents](README.md) | [Next: ValidationContext Deep Dive -->>\](07-validation-context.md)
+[<<-- Previous: ASP.NET MVC Automatic Validation](05-aspnet-mvc-validation.md) | [Table of Contents](README.md) | [Next: ValidationContext Deep Dive -->>](07-validation-context.md)
 ---

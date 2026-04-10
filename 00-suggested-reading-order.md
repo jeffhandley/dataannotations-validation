@@ -1,5 +1,5 @@
 ---
-[Table of Contents](README.md) | [Next: Built-In Validation Attributes -->>\](01-built-in-validation-attributes.md)
+[Table of Contents](README.md) | [Next: Built-In Validation Attributes -->>](01-built-in-validation-attributes.md)
 ---
 
 # Suggested Reading Order
@@ -50,6 +50,13 @@ DataAnnotations validation saw its most significant innovation during the .NET R
 24. [Strickland: Inspiration](https://github.com/jeffhandley/strickland/blob/master/docs/inspiration.md)
 25. [Strickland: Two-Stage Sync/Async Validation](https://github.com/jeffhandley/strickland/blob/master/docs/async-validation/two-stage-sync-async-validation.md)
 
+## Phase 5: Integration History and Working Prototype
+
+26. [Chapter 11: The History of DataAnnotations Integration Across .NET](11-integration-history.md) — Chronological history of every integration point with PR/issue citations
+27. [Chapter 12: The Async Validation Prototype — A Working Demo](12-async-validation-demo.md) — Analysis of the [`oroztocil/validation-demo`](https://github.com/dotnet/aspnetcore/tree/oroztocil/validation-demo) branch
+28. [Microsoft.Extensions.Validation design issue (dotnet/aspnetcore#46349)](https://github.com/dotnet/aspnetcore/issues/46349) — Unified validation design proposal
+29. [Minimal API validation PR (dotnet/aspnetcore#60724)](https://github.com/dotnet/aspnetcore/pull/60724) — Core implementation of Minimal API validation
+
 ---
-[Table of Contents](README.md) | [Next: Built-In Validation Attributes -->>\](01-built-in-validation-attributes.md)
+[Table of Contents](README.md) | [Next: Built-In Validation Attributes -->>](01-built-in-validation-attributes.md)
 ---

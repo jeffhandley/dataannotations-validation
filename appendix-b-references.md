@@ -110,6 +110,17 @@
 - [Microsoft.Extensions.Validation docs for .NET 10](https://github.com/dotnet/runtime/issues/120492)
 - [New Data Annotation Attributes in .NET 8](https://benjamin-abt.com/blog/2023/11/19/dotnet-8-net-new-data-annotations/)
 
+## Async Validation Prototype (Demo Branch)
+
+- [oroztocil/validation-demo branch](https://github.com/dotnet/aspnetcore/tree/oroztocil/validation-demo) — Working prototype with `AsyncValidationAttribute`, `IAsyncValidatableObject`, and sample applications
+- [Microsoft.Extensions.Validation unified validation design (dotnet/aspnetcore#46349)](https://github.com/dotnet/aspnetcore/issues/46349)
+- [Minimal API validation core PR (dotnet/aspnetcore#60724)](https://github.com/dotnet/aspnetcore/pull/60724)
+- [Blazor Forms & Validation PR (dotnet/aspnetcore#7614)](https://github.com/dotnet/aspnetcore/pull/7614) — Steve Sanderson's original PR that noted async validation as a planned enhancement
+- [Options validation source generator PR (dotnet/runtime#87587)](https://github.com/dotnet/runtime/pull/87587)
+- [OpenAPI DataAnnotations schema PR (dotnet/aspnetcore#56225)](https://github.com/dotnet/aspnetcore/pull/56225)
+- [EF Core DataAnnotations conventions PR (dotnet/efcore#2463)](https://github.com/dotnet/efcore/pull/2463)
+- [Options.DataAnnotations design issue (dotnet/aspnetcore#3385)](https://github.com/dotnet/aspnetcore/issues/3385)
+
 ---
 [<<-- Previous: .NET Integration Points Catalog](appendix-a-integration-points.md) | [Table of Contents](README.md)
 ---

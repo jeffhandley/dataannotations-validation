@@ -15,8 +15,10 @@ This repository contains comprehensive training material for .NET's `System.Comp
 9. **[Chapter 8: The ValidationResult API](08-validation-result-api.md)** — Understanding validation results and error reporting
 10. **[Chapter 9: The Async Validation Gap](09-async-validation-gap.md)** — Why DataAnnotations lacks async support today
 11. **[Chapter 10: Strickland — Parallel Concepts and Async Validation](10-strickland.md)** — Lessons from a JavaScript validation framework
-12. **[Appendix A: .NET Integration Points Catalog](appendix-a-integration-points.md)** — Every framework that consumes DataAnnotations
-13. **[Appendix B: Complete Reference Link Library](appendix-b-references.md)** — All source links and documentation references
+12. **[Chapter 11: The History of DataAnnotations Integration Across .NET](11-integration-history.md)** — Chronological history of every integration point
+13. **[Chapter 12: The Async Validation Prototype — A Working Demo](12-async-validation-demo.md)** — Analysis of a working async validation prototype
+14. **[Appendix A: .NET Integration Points Catalog](appendix-a-integration-points.md)** — Every framework that consumes DataAnnotations
+15. **[Appendix B: Complete Reference Link Library](appendix-b-references.md)** — All source links and documentation references
 
 ## About This Material
 
