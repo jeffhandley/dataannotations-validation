@@ -1,6 +1,6 @@
-# System.ComponentModel.DataAnnotations Validation Training
+# System.ComponentModel.DataAnnotations Validation — Maintainer's Guide
 
-This repository contains comprehensive training material for .NET's `System.ComponentModel.DataAnnotations` validation system. It covers everything from built-in attributes through advanced extensibility, and explores the path toward adding async validation to DataAnnotations. The material is designed to bring a team up to speed so they can build a project plan for adding async validation across the entire .NET product suite.
+This repository contains a comprehensive guide to .NET's `System.ComponentModel.DataAnnotations` validation system. It covers everything from built-in attributes through advanced extensibility, and explores the path toward adding async validation to DataAnnotations. The material is designed to bring a team up to speed so they can build a project plan for adding async validation across the entire .NET product suite.
 
 ## Table of Contents
 
