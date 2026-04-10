@@ -33,6 +33,13 @@ graph TB
         WPF["WPF / WinForms\n(Manual / Adapter)"]
     end
 
+    subgraph "Ecosystem (Collaboration)"
+        OpenRIA["OpenRiaServices"]
+        BlazorUI["Blazor Component Vendors\n(MudBlazor, Radzen, Telerik,\nSyncfusion, DevExpress)"]
+        APIFrameworks["API Frameworks\n(FastEndpoints, MiniValidation)"]
+        SchemaGen["Schema Generators\n(Swashbuckle, NSwag)"]
+    end
+
     Core --> Options
     Core --> MVC
     Core --> Blazor
@@ -40,6 +47,10 @@ graph TB
     Core --> EF
     Core --> ExtVal
     Core --> WPF
+    Core --> OpenRIA
+    Blazor --> BlazorUI
+    Core --> APIFrameworks
+    Core --> SchemaGen
 ```
 
 ## Tier 1: Core Validation Library (dotnet/runtime)
@@ -129,6 +140,60 @@ graph TB
 | **No built-in validation** | Minimal APIs do NOT have automatic model validation |
 | **Manual or library-based** | Developers call `Validator.TryValidateObject()` manually |
 
+## Ecosystem: External Projects with DataAnnotations Integration
+
+These projects are outside the core .NET product suite but have direct integration with DataAnnotations validation. Changes to the core validation APIs (especially adding async support) will affect them. Collaboration and communication with these projects is essential.
+
+### OpenRiaServices (.NET Foundation)
+
+| Component | How It Uses Validation |
+|-----------|----------------------|
+| **`Entity.ValidateProperty()`** | Calls `Validator.TryValidateProperty()` in property setters |
+| **`ValidationUtilities.TryValidateObject()`** | Wrapper around `Validator.TryValidateObject()` with recursive complex-type support |
+| **`DomainService.ValidateChangeSetAsync()`** | Server-side changeset validation via `ValidateOperations()` → `Validator.TryValidateObject()` |
+| **`ValidationResultCollection`** | Mutable collection implementing `INotifyDataErrorInfo` for async error injection |
+
+[OpenRiaServices][openria] is the actively maintained successor to WCF RIA Services, targeting .NET 8+ and .NET Framework 4.7.2. It is a .NET Foundation project with its own recursive validation pipeline built on top of `Validator`. As a direct consumer of the core validation APIs, any async changes to `ValidationAttribute` or `Validator` will impact OpenRiaServices.
+
+### Blazor Component Vendors
+
+These UI component libraries build on Blazor's `EditContext` and `DataAnnotationsValidator`, meaning they inherit the same validation behavior (and limitations):
+
+| Vendor | How It Uses Validation |
+|--------|----------------------|
+| **[MudBlazor][mudblazor]** | Field-level: calls `ValidationAttribute.GetValidationResult()` directly; form-level: aggregates via `MudForm` |
+| **[Radzen Blazor][radzen]** | Custom `RadzenDataAnnotationValidator` calls `Validator.TryValidateProperty()` directly |
+| **[Telerik UI for Blazor][telerik-blazor]** | `TelerikForm` wraps standard `EditForm` + `DataAnnotationsValidator`; uses `EditContext.Validate()` |
+| **[Syncfusion Blazor][syncfusion]** | `SfDataForm` uses `<DataAnnotationsValidator/>` within its form infrastructure |
+| **[DevExpress Blazor][devexpress]** | Grid and form components use standard `DataAnnotationsValidator`; supports custom validator templates |
+
+All of these vendors will benefit from async validation support in `EditContext` and `DataAnnotationsValidator` without requiring coordinated code changes — assuming the Blazor integration maintains backward compatibility.
+
+### API Frameworks
+
+| Framework | How It Uses Validation |
+|-----------|----------------------|
+| **[FastEndpoints][fastendpoints]** | Optional `EnableDataAnnotationsSupport`; recursive request validation via `Validator.TryValidateObject()` |
+| **[MiniValidation][minivalidation]** | Built atop DataAnnotations; recursive graph walk with cycle detection; `Validator.TryValidateValue()` per property; supports `IAsyncValidatableObject` |
+
+MiniValidation (by [Damian Edwards][damian-edwards]) is particularly relevant — it already demonstrates a recursive, async-capable validation pattern built on DataAnnotations. See [Chapter 13](13-object-graph-validation.md) for details.
+
+### Schema Generators (Metadata Consumers)
+
+| Tool | How It Uses Validation Attributes |
+|------|-----------------------------------|
+| **[Swashbuckle.AspNetCore][swashbuckle]** | Maps `[Required]`, `[Range]`, `[MinLength]`, `[MaxLength]`, `[RegularExpression]`, `[DataType]` to OpenAPI schema properties |
+| **[NSwag][nswag]** | Reads `[Required]` and DataAnnotations attributes for schema and parameter generation |
+
+These tools read validation attributes as metadata only and do not invoke runtime validation. They may need updates to represent new async-specific attributes in generated schemas.
+
+### Other Known Consumers
+
+| Project | How It Uses Validation |
+|---------|----------------------|
+| **[ServiceStack][servicestack]** | Blazor templates use `EditForm` + `DataAnnotationsValidator`; HTML helpers emit unobtrusive validation attributes |
+| **[FluentValidation][fluentvalidation]** | Independent validation framework; does not consume DataAnnotations attributes directly but provides MVC integration that replaces the DataAnnotations pipeline |
+
 ## Summary: Invocation Paths That Need Async Support
 
 1. **`Validator` class** — Core static methods (dotnet/runtime)
@@ -143,8 +208,34 @@ graph TB
 10. **OpenAPI schema generation** — May need schema representation for async validators
 11. **Any future Minimal API validation** — If built-in validation is added
 
+## Ecosystem Collaboration Points
+
+These are not owned by the .NET team but must be considered in the async validation design:
+
+12. **OpenRiaServices** — Direct consumer of `Validator.TryValidateObject/Property()` with its own recursive pipeline (collaboration via .NET Foundation)
+13. **Blazor component vendors** — MudBlazor, Radzen, Telerik, Syncfusion, DevExpress all build on `EditContext`/`DataAnnotationsValidator` (will inherit async support if Blazor integration is backward-compatible)
+14. **FastEndpoints** — Calls `Validator.TryValidateObject()` recursively for request validation
+15. **MiniValidation** — Recursive graph validation atop DataAnnotations; already has `IAsyncValidatableObject`
+16. **Swashbuckle / NSwag** — Metadata consumers that may need to represent async validators in schemas
+
 <nav>
 
 <a href="13-object-graph-validation.md">← Previous: Object Graph Validation</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-b-references.md">Next: Appendix B: Complete Reference Link Library →</a>
 
 </nav>
+
+<!-- Reference definitions -->
+
+[openria]: https://github.com/OpenRIAServices/OpenRiaServices
+[mudblazor]: https://github.com/MudBlazor/MudBlazor
+[radzen]: https://github.com/radzenhq/radzen-blazor
+[telerik-blazor]: https://github.com/telerik/blazor-ui
+[syncfusion]: https://github.com/syncfusion/blazor-samples
+[devexpress]: https://github.com/DevExpress/Blazor
+[fastendpoints]: https://github.com/FastEndpoints/FastEndpoints
+[minivalidation]: https://github.com/DamianEdwards/MiniValidation
+[damian-edwards]: https://github.com/DamianEdwards
+[swashbuckle]: https://github.com/domaindrivendev/Swashbuckle.AspNetCore
+[nswag]: https://github.com/RicoSuter/NSwag
+[servicestack]: https://github.com/ServiceStack/ServiceStack
+[fluentvalidation]: https://github.com/FluentValidation/FluentValidation
