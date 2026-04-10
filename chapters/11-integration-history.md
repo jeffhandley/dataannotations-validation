@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="10-strickland.md">← Previous: Strickland — Parallel Concepts and Async Validation</a> | <a href="README.md">Table of Contents</a> | <a href="12-async-validation-demo.md">Next: The Async Validation Prototype →</a>
+<a href="10-strickland.md">← Previous: Strickland — Parallel Concepts and Async Validation</a> | <a href="../README.md">Table of Contents</a> | <a href="12-async-validation-demo.md">Next: The Async Validation Prototype →</a>
 
 </nav>
 
@@ -289,7 +289,7 @@ Aspire is listed here because it is a significant and growing consumer of the op
 
 <nav>
 
-<a href="10-strickland.md">← Previous: Strickland — Parallel Concepts and Async Validation</a> | <a href="README.md">Table of Contents</a> | <a href="12-async-validation-demo.md">Next: The Async Validation Prototype →</a>
+<a href="10-strickland.md">← Previous: Strickland — Parallel Concepts and Async Validation</a> | <a href="../README.md">Table of Contents</a> | <a href="12-async-validation-demo.md">Next: The Async Validation Prototype →</a>
 
 </nav>
 

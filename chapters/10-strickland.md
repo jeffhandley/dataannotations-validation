@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="09-async-validation-gap.md">← Previous: The Async Validation Gap</a> | <a href="README.md">Table of Contents</a> | <a href="11-integration-history.md">Next: The History of DataAnnotations Integration Across .NET →</a>
+<a href="09-async-validation-gap.md">← Previous: The Async Validation Gap</a> | <a href="../README.md">Table of Contents</a> | <a href="11-integration-history.md">Next: The History of DataAnnotations Integration Across .NET →</a>
 
 </nav>
 
@@ -155,7 +155,7 @@ Reference: [Strickland: Deferred Async Validation][strickland-deferred-async]
 
 <nav>
 
-<a href="09-async-validation-gap.md">← Previous: The Async Validation Gap</a> | <a href="README.md">Table of Contents</a> | <a href="11-integration-history.md">Next: The History of DataAnnotations Integration Across .NET →</a>
+<a href="09-async-validation-gap.md">← Previous: The Async Validation Gap</a> | <a href="../README.md">Table of Contents</a> | <a href="11-integration-history.md">Next: The History of DataAnnotations Integration Across .NET →</a>
 
 </nav>
 

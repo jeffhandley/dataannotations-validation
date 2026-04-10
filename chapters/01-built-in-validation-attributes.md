@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="00-suggested-reading-order.md">← Previous: Suggested Reading Order</a> | <a href="README.md">Table of Contents</a> | <a href="02-creating-custom-attributes.md">Next: Creating Custom Validation Attributes →</a>
+<a href="../README.md">← Previous: Table of Contents</a> | <a href="../README.md">Table of Contents</a> | <a href="02-creating-custom-attributes.md">Next: Creating Custom Validation Attributes →</a>
 
 </nav>
 
@@ -70,7 +70,7 @@ Different validators expose additional numbered placeholders beyond `{0}`:
 
 <nav>
 
-<a href="00-suggested-reading-order.md">← Previous: Suggested Reading Order</a> | <a href="README.md">Table of Contents</a> | <a href="02-creating-custom-attributes.md">Next: Creating Custom Validation Attributes →</a>
+<a href="../README.md">← Previous: Table of Contents</a> | <a href="../README.md">Table of Contents</a> | <a href="02-creating-custom-attributes.md">Next: Creating Custom Validation Attributes →</a>
 
 </nav>
 

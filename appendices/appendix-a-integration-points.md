@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="13-object-graph-validation.md">← Previous: Object Graph Validation</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-b-references.md">Next: Appendix B: Complete Reference Link Library →</a>
+<a href="../chapters/13-object-graph-validation.md">← Previous: Object Graph Validation</a> | <a href="../README.md">Table of Contents</a> | <a href="appendix-b-references.md">Next: Appendix B: Complete Reference Link Library →</a>
 
 </nav>
 
@@ -176,7 +176,7 @@ All of these vendors will benefit from async validation support in `EditContext`
 | **[FastEndpoints][fastendpoints]** | Optional `EnableDataAnnotationsSupport`; recursive request validation via `Validator.TryValidateObject()` |
 | **[MiniValidation][minivalidation]** | Built atop DataAnnotations; recursive graph walk with cycle detection; `Validator.TryValidateValue()` per property; supports `IAsyncValidatableObject` |
 
-MiniValidation (by [Damian Edwards][damian-edwards]) is particularly relevant — it already demonstrates a recursive, async-capable validation pattern built on DataAnnotations. See [Chapter 13](13-object-graph-validation.md) for details.
+MiniValidation (by [Damian Edwards][damian-edwards]) is particularly relevant — it already demonstrates a recursive, async-capable validation pattern built on DataAnnotations. See [Chapter 13](../chapters/13-object-graph-validation.md) for details.
 
 ### Schema Generators (Metadata Consumers)
 
@@ -220,7 +220,7 @@ These are not owned by the .NET team but must be considered in the async validat
 
 <nav>
 
-<a href="13-object-graph-validation.md">← Previous: Object Graph Validation</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-b-references.md">Next: Appendix B: Complete Reference Link Library →</a>
+<a href="../chapters/13-object-graph-validation.md">← Previous: Object Graph Validation</a> | <a href="../README.md">Table of Contents</a> | <a href="appendix-b-references.md">Next: Appendix B: Complete Reference Link Library →</a>
 
 </nav>
 

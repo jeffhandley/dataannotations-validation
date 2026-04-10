@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="02-creating-custom-attributes.md">← Previous: Creating Custom Validation Attributes</a> | <a href="README.md">Table of Contents</a> | <a href="04-programmatic-validation.md">Next: Programmatic Validation →</a>
+<a href="02-creating-custom-attributes.md">← Previous: Creating Custom Validation Attributes</a> | <a href="../README.md">Table of Contents</a> | <a href="04-programmatic-validation.md">Next: Programmatic Validation →</a>
 
 </nav>
 
@@ -105,7 +105,7 @@ When `Validator.TryValidateObject` runs with `validateAllProperties: true`, it e
 
 <nav>
 
-<a href="02-creating-custom-attributes.md">← Previous: Creating Custom Validation Attributes</a> | <a href="README.md">Table of Contents</a> | <a href="04-programmatic-validation.md">Next: Programmatic Validation →</a>
+<a href="02-creating-custom-attributes.md">← Previous: Creating Custom Validation Attributes</a> | <a href="../README.md">Table of Contents</a> | <a href="04-programmatic-validation.md">Next: Programmatic Validation →</a>
 
 </nav>
 

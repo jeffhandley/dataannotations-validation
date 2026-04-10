@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="appendix-a-integration-points.md">← Previous: .NET Integration Points Catalog</a> | <a href="README.md">Table of Contents</a>
+<a href="appendix-a-integration-points.md">← Previous: .NET Integration Points Catalog</a> | <a href="../README.md">Table of Contents</a>
 
 </nav>
 
@@ -125,6 +125,6 @@
 
 <nav>
 
-<a href="appendix-a-integration-points.md">← Previous: .NET Integration Points Catalog</a> | <a href="README.md">Table of Contents</a>
+<a href="appendix-a-integration-points.md">← Previous: .NET Integration Points Catalog</a> | <a href="../README.md">Table of Contents</a>
 
 </nav>

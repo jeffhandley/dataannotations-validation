@@ -2,24 +2,81 @@
 
 This repository contains a comprehensive guide to .NET's `System.ComponentModel.DataAnnotations` validation system. It covers everything from built-in attributes through advanced extensibility, and explores the path toward adding async validation to DataAnnotations. The material is designed to bring a team up to speed so they can build a project plan for adding async validation across the entire .NET product suite.
 
-## Table of Contents
+## Chapters
 
-1. **[Suggested Reading Order](00-suggested-reading-order.md)** — External resources organized by learning phase
-2. **[Chapter 1: Built-In Validation Attributes](01-built-in-validation-attributes.md)** — Complete catalog of attributes shipped with .NET
-3. **[Chapter 2: Creating Custom Validation Attributes](02-creating-custom-attributes.md)** — Deriving from `ValidationAttribute` for reusable rules
-4. **[Chapter 3: Annotating Objects for Validation](03-annotating-objects.md)** — Applying attributes to properties and classes
-5. **[Chapter 4: Programmatic (Manual) Validation](04-programmatic-validation.md)** — Using the `Validator` class directly
-6. **[Chapter 5: ASP.NET MVC Automatic Validation](05-aspnet-mvc-validation.md)** — How model binding triggers validation
-7. **[Chapter 6: Advanced Custom Validation](06-advanced-custom-validation.md)** — `IValidatableObject` and complex validation scenarios
-8. **[Chapter 7: ValidationContext Deep Dive](07-validation-context.md)** — Services, Items dictionary, and context propagation
-9. **[Chapter 8: The ValidationResult API](08-validation-result-api.md)** — Understanding validation results and error reporting
-10. **[Chapter 9: The Async Validation Gap](09-async-validation-gap.md)** — Why DataAnnotations lacks async support today
-11. **[Chapter 10: Strickland — Parallel Concepts and Async Validation](10-strickland.md)** — Lessons from a JavaScript validation framework
-12. **[Chapter 11: The History of DataAnnotations Integration Across .NET](11-integration-history.md)** — Chronological history of every integration point
-13. **[Chapter 12: The Async Validation Prototype — A Working Demo](12-async-validation-demo.md)** — Analysis of a working async validation prototype
-14. **[Chapter 13: Object Graph Validation](13-object-graph-validation.md)** — Recursive walks, result representation, and ecosystem solutions
-15. **[Appendix A: .NET Integration Points Catalog](appendix-a-integration-points.md)** — Every framework that consumes DataAnnotations
-15. **[Appendix B: Complete Reference Link Library](appendix-b-references.md)** — All source links and documentation references
+1. **[Built-In Validation Attributes](chapters/01-built-in-validation-attributes.md)** — Complete catalog of attributes shipped with .NET
+2. **[Creating Custom Validation Attributes](chapters/02-creating-custom-attributes.md)** — Deriving from `ValidationAttribute` for reusable rules
+3. **[Annotating Objects for Validation](chapters/03-annotating-objects.md)** — Applying attributes to properties and classes
+4. **[Programmatic (Manual) Validation](chapters/04-programmatic-validation.md)** — Using the `Validator` class directly
+5. **[ASP.NET MVC Automatic Validation](chapters/05-aspnet-mvc-validation.md)** — How model binding triggers validation
+6. **[Advanced Custom Validation](chapters/06-advanced-custom-validation.md)** — `IValidatableObject` and complex validation scenarios
+7. **[ValidationContext Deep Dive](chapters/07-validation-context.md)** — Services, Items dictionary, and context propagation
+8. **[The ValidationResult API](chapters/08-validation-result-api.md)** — Understanding validation results and error reporting
+9. **[The Async Validation Gap](chapters/09-async-validation-gap.md)** — Why DataAnnotations lacks async support today
+10. **[Strickland — Parallel Concepts and Async Validation](chapters/10-strickland.md)** — Lessons from a JavaScript validation framework
+11. **[The History of DataAnnotations Integration Across .NET](chapters/11-integration-history.md)** — Chronological history of every integration point
+12. **[The Async Validation Prototype — A Working Demo](chapters/12-async-validation-demo.md)** — Analysis of a working async validation prototype
+13. **[Object Graph Validation](chapters/13-object-graph-validation.md)** — Recursive walks, result representation, and ecosystem solutions
+
+## Appendices
+
+- **[Appendix A: .NET Integration Points Catalog](appendices/appendix-a-integration-points.md)** — Every framework that consumes DataAnnotations
+- **[Appendix B: Complete Reference Link Library](appendices/appendix-b-references.md)** — All source links and documentation references
+
+## Suggested Reading Order
+
+For team members who are new to DataAnnotations validation, the recommended reading order below starts with the foundational blog series, moves through official API documentation, then application model integration, and finishes with async validation concepts.
+
+### Phase 1: Historical Foundation (RIA Services Blog Series)
+
+DataAnnotations validation saw its most significant innovation during the .NET RIA Services era (2009–2012), when APIs like `IValidatableObject`, `ValidationResult`, `ValidationContext`, and `Validator` were designed and refined. The 2010 RIA Services Validation blog series was written against RIA Services but covers the universal DataAnnotations framework, and it remains one of the most thorough walkthroughs available.
+
+1. [Standard Validators][blog-standard-validators] — `[Required]`, `[Range]`, `[StringLength]`, `[RegularExpression]`; error messages and localization
+2. [Custom Validation Methods][blog-custom-methods] — Using `[CustomValidation]` to delegate to static methods
+3. [Custom Reusable Validators][blog-custom-reusable] — Deriving from `ValidationAttribute`; the `IsValid(object, ValidationContext)` override
+4. [Attribute Propagation][blog-attribute-propagation] — How validators flow between tiers
+5. [Validation Triggers][blog-validation-triggers] — When validation is invoked
+6. [Cross-Field Validation][blog-cross-field] — Validating one property based on another
+7. [Entity-Level Validation][blog-entity-level] — Class-level validation and the 4-stage pipeline
+8. [Providing ValidationContext][blog-providing-context] — Items dictionary, IServiceProvider, ServiceContainer
+9. [Using ValidationContext (Cross-Entity Validation)][blog-cross-entity] — Service-based validators that access data stores
+10. [ViewModel Validation with Entity Rules][blog-viewmodel-validation] — Reusing validation across view models
+
+> **Additional Resources:**
+>
+> - GitHub repository with sample code: [jeffhandley/RIAServicesValidation][github-ria-validation]
+> - Video tutorials (VB): [RIA Services Validation Video Tutorials][blog-video-tutorials]
+
+### Phase 2: Modern .NET API Documentation
+
+11. [System.ComponentModel.DataAnnotations Namespace][api-namespace]
+12. [Validator Class API][api-validator]
+13. [ValidationAttribute Class][api-validation-attribute]
+14. [ValidationContext Class][api-validation-context]
+15. [ValidationResult Class][api-validation-result]
+
+### Phase 3: Application Model Integration
+
+16. [ASP.NET Core MVC Model Validation][docs-mvc-validation]
+17. [Blazor Forms Validation][docs-blazor-validation]
+18. [Options Pattern Validation][docs-options-validation] — `ValidateDataAnnotations()`, `ValidateOnStart()`
+19. [EF Core Data Annotations][docs-ef-core]
+20. [ASP.NET Core OpenAPI][docs-openapi]
+21. [WPF Data Validation][docs-wpf-validation]
+22. [WinForms Input Validation][docs-winforms-validation]
+
+### Phase 4: Async Validation Concepts
+
+23. [Strickland Documentation][strickland-docs] / [GitHub][strickland-github]
+24. [Strickland: Inspiration][strickland-inspiration]
+25. [Strickland: Two-Stage Sync/Async Validation][strickland-two-stage]
+
+### Phase 5: Integration History and Working Prototype
+
+26. [Chapter 11: The History of DataAnnotations Integration Across .NET](chapters/11-integration-history.md) — Chronological history of every integration point with PR/issue citations
+27. [Chapter 12: The Async Validation Prototype — A Working Demo](chapters/12-async-validation-demo.md) — Analysis of the [`oroztocil/validation-demo`][validation-demo-branch] branch
+28. [Microsoft.Extensions.Validation design issue (dotnet/aspnetcore#46349)][aspnetcore-46349] — Unified validation design proposal
+29. [Minimal API validation PR (dotnet/aspnetcore#60724)][aspnetcore-60724] — Core implementation of Minimal API validation
 
 ## About This Material
 
@@ -33,3 +90,34 @@ This repository is licensed under the MIT License. See the [LICENSE](LICENSE) fi
 [dotnet-runtime]: https://github.com/dotnet/runtime
 [ria-series]: https://jeffhandley.com/2010-09-22/riaservicesstandardvalidators
 [strickland]: https://github.com/jeffhandley/strickland
+[blog-standard-validators]: https://jeffhandley.com/2010-09-22/riaservicesstandardvalidators
+[blog-custom-methods]: https://jeffhandley.com/2010-09-26/riaservicescustomvalidationmethods
+[blog-custom-reusable]: https://jeffhandley.com/2010-09-26/riaservicescustomreusablevalidators
+[blog-attribute-propagation]: https://jeffhandley.com/archive/2010/09/30/RiaServicesValidationAttributePropagation.aspx
+[blog-validation-triggers]: https://jeffhandley.com/archive/2010/10/06/RiaServicesValidationTriggers.aspx
+[blog-cross-field]: https://jeffhandley.com/2010-10-10/crossfieldvalidation
+[blog-entity-level]: https://jeffhandley.com/2010-10-12/entitylevelvalidation
+[blog-providing-context]: https://jeffhandley.com/2010-10-25/riaservicesvalidationcontext
+[blog-cross-entity]: https://jeffhandley.com/2010-10-25/crossentityvalidation
+[blog-viewmodel-validation]: https://jeffhandley.com/archive/2011/09/06/ViewModelValidation.aspx
+[github-ria-validation]: https://github.com/jeffhandley/RIAServicesValidation
+[blog-video-tutorials]: https://jeffhandley.com/2010-11-20/riaservicesvalidationvideotutorials
+[api-namespace]: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations?view=net-9.0
+[api-validator]: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validator?view=net-9.0
+[api-validation-attribute]: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationattribute?view=net-9.0
+[api-validation-context]: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationcontext?view=net-9.0
+[api-validation-result]: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationresult?view=net-9.0
+[docs-mvc-validation]: https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation
+[docs-blazor-validation]: https://learn.microsoft.com/en-us/aspnet/core/blazor/forms/validation
+[docs-options-validation]: https://learn.microsoft.com/en-us/dotnet/core/extensions/options
+[docs-ef-core]: https://learn.microsoft.com/en-us/ef/core/modeling/entity-properties
+[docs-openapi]: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/aspnetcore-openapi
+[docs-wpf-validation]: https://learn.microsoft.com/en-us/dotnet/desktop/wpf/data/
+[docs-winforms-validation]: https://learn.microsoft.com/en-us/dotnet/desktop/winforms/input-keyboard/validation
+[strickland-docs]: https://strickland.io
+[strickland-github]: https://github.com/jeffhandley/strickland
+[strickland-inspiration]: https://github.com/jeffhandley/strickland/blob/master/docs/inspiration.md
+[strickland-two-stage]: https://github.com/jeffhandley/strickland/blob/master/docs/async-validation/two-stage-sync-async-validation.md
+[validation-demo-branch]: https://github.com/dotnet/aspnetcore/tree/oroztocil/validation-demo
+[aspnetcore-46349]: https://github.com/dotnet/aspnetcore/issues/46349
+[aspnetcore-60724]: https://github.com/dotnet/aspnetcore/pull/60724

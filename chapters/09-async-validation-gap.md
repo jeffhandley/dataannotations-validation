@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="08-validation-result-api.md">← Previous: The ValidationResult API</a> | <a href="README.md">Table of Contents</a> | <a href="10-strickland.md">Next: Strickland — Parallel Concepts and Async Validation →</a>
+<a href="08-validation-result-api.md">← Previous: The ValidationResult API</a> | <a href="../README.md">Table of Contents</a> | <a href="10-strickland.md">Next: Strickland — Parallel Concepts and Async Validation →</a>
 
 </nav>
 
@@ -136,13 +136,13 @@ Every invocation point across the .NET product suite must gain async support. Th
 5. **Microsoft.Extensions.Validation (.NET 10)** — New unified validation APIs
 6. **OpenAPI** — Schema generation may need to represent async validators
 
-See [Chapter 11](11-integration-history.md) for the full chronological history of how each integration was added, and [Appendix A](appendix-a-integration-points.md) for the complete 11-tier catalog.
+See [Chapter 11](11-integration-history.md) for the full chronological history of how each integration was added, and [Appendix A](../appendices/appendix-a-integration-points.md) for the complete 11-tier catalog.
 
 > **Prototype available:** A working async validation demo already exists — see [Chapter 12](12-async-validation-demo.md) for a detailed analysis of the `AsyncValidationAttribute`, `IAsyncValidatableObject`, and the two-phase validation strategy implemented in the [oroztocil/validation-demo][validation-demo-branch] branch.
 
 <nav>
 
-<a href="08-validation-result-api.md">← Previous: The ValidationResult API</a> | <a href="README.md">Table of Contents</a> | <a href="10-strickland.md">Next: Strickland — Parallel Concepts and Async Validation →</a>
+<a href="08-validation-result-api.md">← Previous: The ValidationResult API</a> | <a href="../README.md">Table of Contents</a> | <a href="10-strickland.md">Next: Strickland — Parallel Concepts and Async Validation →</a>
 
 </nav>
 

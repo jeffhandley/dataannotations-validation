@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="01-built-in-validation-attributes.md">← Previous: Built-In Validation Attributes</a> | <a href="README.md">Table of Contents</a> | <a href="03-annotating-objects.md">Next: Annotating Objects for Validation →</a>
+<a href="01-built-in-validation-attributes.md">← Previous: Built-In Validation Attributes</a> | <a href="../README.md">Table of Contents</a> | <a href="03-annotating-objects.md">Next: Annotating Objects for Validation →</a>
 
 </nav>
 
@@ -95,7 +95,7 @@ The [Custom Validation Methods][custom-validation-methods] post outlines these r
 
 <nav>
 
-<a href="01-built-in-validation-attributes.md">← Previous: Built-In Validation Attributes</a> | <a href="README.md">Table of Contents</a> | <a href="03-annotating-objects.md">Next: Annotating Objects for Validation →</a>
+<a href="01-built-in-validation-attributes.md">← Previous: Built-In Validation Attributes</a> | <a href="../README.md">Table of Contents</a> | <a href="03-annotating-objects.md">Next: Annotating Objects for Validation →</a>
 
 </nav>
 

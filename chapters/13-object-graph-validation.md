@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="12-async-validation-demo.md">← Previous: The Async Validation Prototype</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-a-integration-points.md">Next: Appendix A: .NET Integration Points Catalog →</a>
+<a href="12-async-validation-demo.md">← Previous: The Async Validation Prototype</a> | <a href="../README.md">Table of Contents</a> | <a href="../appendices/appendix-a-integration-points.md">Next: Appendix A: .NET Integration Points Catalog →</a>
 
 </nav>
 
@@ -250,7 +250,7 @@ FluentValidation also offers `FluentValidation.AspNetCore` for MVC integration a
 
 <nav>
 
-<a href="12-async-validation-demo.md">← Previous: The Async Validation Prototype</a> | <a href="README.md">Table of Contents</a> | <a href="appendix-a-integration-points.md">Next: Appendix A: .NET Integration Points Catalog →</a>
+<a href="12-async-validation-demo.md">← Previous: The Async Validation Prototype</a> | <a href="../README.md">Table of Contents</a> | <a href="../appendices/appendix-a-integration-points.md">Next: Appendix A: .NET Integration Points Catalog →</a>
 
 </nav>
 

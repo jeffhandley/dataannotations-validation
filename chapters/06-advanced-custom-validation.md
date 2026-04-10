@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="05-aspnet-mvc-validation.md">← Previous: ASP.NET MVC Automatic Validation</a> | <a href="README.md">Table of Contents</a> | <a href="07-validation-context.md">Next: ValidationContext Deep Dive →</a>
+<a href="05-aspnet-mvc-validation.md">← Previous: ASP.NET MVC Automatic Validation</a> | <a href="../README.md">Table of Contents</a> | <a href="07-validation-context.md">Next: ValidationContext Deep Dive →</a>
 
 </nav>
 
@@ -177,7 +177,7 @@ flowchart TD
 
 <nav>
 
-<a href="05-aspnet-mvc-validation.md">← Previous: ASP.NET MVC Automatic Validation</a> | <a href="README.md">Table of Contents</a> | <a href="07-validation-context.md">Next: ValidationContext Deep Dive →</a>
+<a href="05-aspnet-mvc-validation.md">← Previous: ASP.NET MVC Automatic Validation</a> | <a href="../README.md">Table of Contents</a> | <a href="07-validation-context.md">Next: ValidationContext Deep Dive →</a>
 
 </nav>
 

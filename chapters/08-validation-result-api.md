@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="07-validation-context.md">← Previous: ValidationContext Deep Dive</a> | <a href="README.md">Table of Contents</a> | <a href="09-async-validation-gap.md">Next: The Async Validation Gap →</a>
+<a href="07-validation-context.md">← Previous: ValidationContext Deep Dive</a> | <a href="../README.md">Table of Contents</a> | <a href="09-async-validation-gap.md">Next: The Async Validation Gap →</a>
 
 </nav>
 
@@ -111,7 +111,7 @@ The key insight: `GetValidationResult` is responsible for calling `FormatErrorMe
 
 <nav>
 
-<a href="07-validation-context.md">← Previous: ValidationContext Deep Dive</a> | <a href="README.md">Table of Contents</a> | <a href="09-async-validation-gap.md">Next: The Async Validation Gap →</a>
+<a href="07-validation-context.md">← Previous: ValidationContext Deep Dive</a> | <a href="../README.md">Table of Contents</a> | <a href="09-async-validation-gap.md">Next: The Async Validation Gap →</a>
 
 </nav>
 

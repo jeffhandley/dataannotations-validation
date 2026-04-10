@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="11-integration-history.md">← Previous: The History of DataAnnotations Integration Across .NET</a> | <a href="README.md">Table of Contents</a> | <a href="13-object-graph-validation.md">Next: Object Graph Validation →</a>
+<a href="11-integration-history.md">← Previous: The History of DataAnnotations Integration Across .NET</a> | <a href="../README.md">Table of Contents</a> | <a href="13-object-graph-validation.md">Next: Object Graph Validation →</a>
 
 </nav>
 
@@ -354,13 +354,13 @@ For the complete async validation project, each integration point from [Chapter 
 - **MVC integration** — Updating `DataAnnotationsModelValidator` and the model binding pipeline to support async validation.
 - **Options integration** — Adding async support to `DataAnnotationValidateOptions<T>` and the Options validation source generator.
 - **Blazor integration** — While the demo shows Blazor working through `Microsoft.Extensions.Validation`, deeper integration with `EditContext` and `FieldState` may be needed for real-time field-level async validation.
-- **Integration point assessment** — Each integration point cataloged in [Appendix A](appendix-a-integration-points.md) needs evaluation for async compatibility, fallback behavior, and migration path.
+- **Integration point assessment** — Each integration point cataloged in [Appendix A](../appendices/appendix-a-integration-points.md) needs evaluation for async compatibility, fallback behavior, and migration path.
 
 The demo branch serves as a **proof of concept** that the two-phase, async-aware validation pipeline is viable and can be integrated into real application scenarios. It provides a concrete foundation for the broader design discussions that will shape async validation across the .NET ecosystem.
 
 <nav>
 
-<a href="11-integration-history.md">← Previous: The History of DataAnnotations Integration Across .NET</a> | <a href="README.md">Table of Contents</a> | <a href="13-object-graph-validation.md">Next: Object Graph Validation →</a>
+<a href="11-integration-history.md">← Previous: The History of DataAnnotations Integration Across .NET</a> | <a href="../README.md">Table of Contents</a> | <a href="13-object-graph-validation.md">Next: Object Graph Validation →</a>
 
 </nav>
 

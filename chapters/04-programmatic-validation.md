@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="03-annotating-objects.md">← Previous: Annotating Objects</a> | <a href="README.md">Table of Contents</a> | <a href="05-aspnet-mvc-validation.md">Next: ASP.NET MVC Automatic Validation →</a>
+<a href="03-annotating-objects.md">← Previous: Annotating Objects</a> | <a href="../README.md">Table of Contents</a> | <a href="05-aspnet-mvc-validation.md">Next: ASP.NET MVC Automatic Validation →</a>
 
 </nav>
 
@@ -139,7 +139,7 @@ Age: The field Age must be between 13 and 120.
 
 <nav>
 
-<a href="03-annotating-objects.md">← Previous: Annotating Objects</a> | <a href="README.md">Table of Contents</a> | <a href="05-aspnet-mvc-validation.md">Next: ASP.NET MVC Automatic Validation →</a>
+<a href="03-annotating-objects.md">← Previous: Annotating Objects</a> | <a href="../README.md">Table of Contents</a> | <a href="05-aspnet-mvc-validation.md">Next: ASP.NET MVC Automatic Validation →</a>
 
 </nav>
 

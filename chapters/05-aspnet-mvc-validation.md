@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="04-programmatic-validation.md">← Previous: Programmatic Validation</a> | <a href="README.md">Table of Contents</a> | <a href="06-advanced-custom-validation.md">Next: Advanced Custom Validation →</a>
+<a href="04-programmatic-validation.md">← Previous: Programmatic Validation</a> | <a href="../README.md">Table of Contents</a> | <a href="06-advanced-custom-validation.md">Next: Advanced Custom Validation →</a>
 
 </nav>
 
@@ -99,7 +99,7 @@ This is **highly relevant** to the async validation project — it represents a 
 
 <nav>
 
-<a href="04-programmatic-validation.md">← Previous: Programmatic Validation</a> | <a href="README.md">Table of Contents</a> | <a href="06-advanced-custom-validation.md">Next: Advanced Custom Validation →</a>
+<a href="04-programmatic-validation.md">← Previous: Programmatic Validation</a> | <a href="../README.md">Table of Contents</a> | <a href="06-advanced-custom-validation.md">Next: Advanced Custom Validation →</a>
 
 </nav>
 

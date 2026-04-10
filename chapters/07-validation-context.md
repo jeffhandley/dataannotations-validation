@@ -2,7 +2,7 @@
 
 <nav>
 
-<a href="06-advanced-custom-validation.md">← Previous: Advanced Custom Validation</a> | <a href="README.md">Table of Contents</a> | <a href="08-validation-result-api.md">Next: The ValidationResult API →</a>
+<a href="06-advanced-custom-validation.md">← Previous: Advanced Custom Validation</a> | <a href="../README.md">Table of Contents</a> | <a href="08-validation-result-api.md">Next: The ValidationResult API →</a>
 
 </nav>
 
@@ -161,7 +161,7 @@ When providing a seed `IServiceProvider`, calls to `GetService` are delegated to
 
 <nav>
 
-<a href="06-advanced-custom-validation.md">← Previous: Advanced Custom Validation</a> | <a href="README.md">Table of Contents</a> | <a href="08-validation-result-api.md">Next: The ValidationResult API →</a>
+<a href="06-advanced-custom-validation.md">← Previous: Advanced Custom Validation</a> | <a href="../README.md">Table of Contents</a> | <a href="08-validation-result-api.md">Next: The ValidationResult API →</a>
 
 </nav>
 
