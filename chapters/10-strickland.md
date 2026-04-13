@@ -159,7 +159,7 @@ Reference: [Strickland: Deferred Async Validation][strickland-deferred-async]
 
 </nav>
 
-[strickland-docs]: https://strickland.io
+[strickland-docs]: https://www.strickland.io
 [strickland-github]: https://github.com/jeffhandley/strickland
 [strickland-inspiration]: https://github.com/jeffhandley/strickland/blob/master/docs/inspiration.md
 [strickland-two-stage]: https://github.com/jeffhandley/strickland/blob/master/docs/async-validation/two-stage-sync-async-validation.md
