@@ -86,7 +86,7 @@
 
 ## Strickland
 
-- [Strickland Website](https://strickland.io)
+- [Strickland Website](https://www.strickland.io)
 - [Strickland GitHub](https://github.com/jeffhandley/strickland)
 - [Strickland NPM Package](https://www.npmjs.com/package/strickland)
 - [Inspiration (DataAnnotations connection)](https://github.com/jeffhandley/strickland/blob/master/docs/inspiration.md)
